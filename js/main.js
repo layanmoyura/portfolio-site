@@ -107,3 +107,14 @@
     
 })(jQuery);
 
+
+function showDetails(projectId) {
+    // Hide all project details initially
+    document.querySelectorAll('[id^="project"]').forEach(function (element) {
+        element.style.display = 'none';
+    });
+
+    // Show the selected project's details
+    document.getElementById(projectId + '-details').style.display = 'block';
+}
+
