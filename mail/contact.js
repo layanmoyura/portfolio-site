@@ -3,6 +3,7 @@ $(function () {
     $("#contactForm input, #contactForm textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function ($form, event, errors) {
+            // Handle submit errors if needed
         },
         submitSuccess: function ($form, event) {
             event.preventDefault();
@@ -23,6 +24,11 @@ $(function () {
                     subject: subject,
                     message: message
                 },
+                dataType: "json", // Added dataType
+                headers: {
+                    "Accept": "application/json",
+                },
+                crossDomain: true, // Added crossDomain
                 cache: false,
                 success: function () {
                     $('#success').html("<div class='alert alert-success'>");
@@ -34,12 +40,12 @@ $(function () {
                             .append('</div>');
                     $('#contactForm').trigger("reset");
                 },
-                error: function () {
-                    console.log(error);
+                error: function (xhr, status, error) {
+                    console.log(xhr.responseText); // Log the full error response
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                             .append("</button>");
-                    $('#success > .alert-danger').append($("<strong>").text("Sorry " + name + ", it seems that our mail server is not responding. Please try again later!"));
+                    $('#success > .alert-danger').append($("<strong>").text("Sorry " + name + ", it seems that there was an error. Please try again later!"));
                     $('#success > .alert-danger').append('</div>');
                     $('#contactForm').trigger("reset");
                 },
@@ -59,8 +65,8 @@ $(function () {
         e.preventDefault();
         $(this).tab("show");
     });
-});
 
-$('#name').focus(function () {
-    $('#success').html('');
+    $('#name').focus(function () {
+        $('#success').html('');
+    });
 });
