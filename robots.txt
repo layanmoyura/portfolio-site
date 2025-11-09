@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Points to sitemap for crawlers
+Sitemap: https://layanmoyura.github.io/portfolio-site/sitemap.xml
