@@ -1,99 +1,203 @@
 (function ($) {
     "use strict";
-    
-    // Hide Loader
-    var loader = function () {
+
+    // 1. Hide Loader
+    var hideLoader = function () {
         setTimeout(function () {
-            if ($('#loader').length > 0) {
-                $('#loader').removeClass('show');
+            var $loader = $('#loader');
+            if ($loader.length > 0) {
+                $loader.removeClass('show');
             }
-        }, 100);
+        }, 120);
     };
-    loader();
-    
-    // Initiate WOW.js animations
+    $(window).on('load', hideLoader);
+    // Fallback safety timeout
+    setTimeout(hideLoader, 1500);
+
+    // 2. Initiate WOW.js animations
     if (typeof WOW !== 'undefined') {
         new WOW().init();
     }
-    
-    // Back to top button
-    $(window).scroll(function () {
+
+    // 3. Back to Top Button
+    var $backToTop = $('.back-to-top');
+    $(window).on('scroll', function () {
         if ($(this).scrollTop() > 300) {
-            $('.back-to-top').fadeIn('slow');
+            $backToTop.fadeIn(250);
         } else {
-            $('.back-to-top').fadeOut('slow');
+            $backToTop.fadeOut(250);
         }
     });
-    
-    $('.back-to-top').on('click', function (e) {
+
+    $backToTop.on('click', function (e) {
         e.preventDefault();
-        $('html, body').animate({scrollTop: 0}, 800, 'easeInOutExpo');
+        $('html, body').stop().animate({ scrollTop: 0 }, 700, 'easeInOutExpo');
         return false;
     });
-    
-    // Smooth scrolling for navigation dock and internal links
+
+    // Helper: Scroll active dock link into view on mobile
+    var centerActiveDockLink = function ($activeLink) {
+        if (!$activeLink || !$activeLink.length) return;
+        var dockEl = document.querySelector('.floating-dock');
+        if (dockEl && dockEl.scrollWidth > dockEl.clientWidth) {
+            var el = $activeLink[0];
+            var targetScrollLeft = el.offsetLeft - (dockEl.clientWidth / 2) + (el.clientWidth / 2);
+            dockEl.scrollTo({
+                left: Math.max(0, targetScrollLeft),
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    // 4. Smooth Scrolling for Navigation Dock and Anchor Links
+    var isSmoothScrolling = false;
+
     $('a[href^="#"]').on('click', function (event) {
-        var target = $(this.hash);
-        if (target.length) {
+        var targetHash = this.hash;
+        if (!targetHash || targetHash === '#') return;
+
+        var $target = $(targetHash);
+        if ($target.length) {
             event.preventDefault();
-            $('html, body').stop().animate({
-                scrollTop: target.offset().top - 30
-            }, 800, 'easeInOutExpo');
-            
-            // If it's a dock link, set active state
+
+            var offset = window.innerWidth <= 1080 ? 20 : 40;
+            var targetTop = Math.max(0, $target.offset().top - offset);
+
             if ($(this).hasClass('dock-link')) {
                 $('.dock-link').removeClass('active');
                 $(this).addClass('active');
+                centerActiveDockLink($(this));
             }
-        }
-    });
-    
-    // ScrollSpy for Floating Dock
-    $(window).on('scroll', function () {
-        var scrollPosition = $(this).scrollTop() + 150;
-        $('section[id]').each(function () {
-            var top = $(this).offset().top;
-            var bottom = top + $(this).outerHeight();
-            var id = $(this).attr('id');
-            if (scrollPosition >= top && scrollPosition <= bottom) {
-                $('.dock-link').removeClass('active');
-                $('.dock-link[href="#' + id + '"]').addClass('active');
-            }
-        });
-    });
-    
-    // Typed.js Dynamic Role Typing
-    var typedElement = $('.typed-text-target');
-    if (typedElement.length) {
-        var typed_strings = $('.typed-source').text();
-        if (typed_strings) {
-            new Typed('.typed-text-target', {
-                strings: typed_strings.split(', '),
-                typeSpeed: 60,
-                backSpeed: 30,
-                backDelay: 1500,
-                smartBackspace: true,
-                loop: true
+
+            isSmoothScrolling = true;
+            $('html, body').stop().animate({
+                scrollTop: targetTop
+            }, 700, 'easeInOutExpo', function () {
+                isSmoothScrolling = false;
             });
         }
+    });
+
+    // 5. ScrollSpy for Floating Dock
+    var $sections = $('section[id]');
+    var $dockLinks = $('.dock-link');
+
+    $(window).on('scroll', function () {
+        if (isSmoothScrolling || !$sections.length || !$dockLinks.length) return;
+
+        var scrollTop = $(this).scrollTop();
+        var windowHeight = $(window).height();
+        var docHeight = $(document).height();
+
+        // If user scrolled to the bottom of the page, activate contact
+        if (scrollTop + windowHeight >= docHeight - 60) {
+            var $contactLink = $('.dock-link[href="#contact"]');
+            if (!$contactLink.hasClass('active')) {
+                $dockLinks.removeClass('active');
+                $contactLink.addClass('active');
+                centerActiveDockLink($contactLink);
+            }
+            return;
+        }
+
+        var scrollPos = scrollTop + (window.innerWidth <= 1080 ? 100 : 160);
+        var currentSectionId = '';
+
+        $sections.each(function () {
+            var sectionTop = $(this).offset().top;
+            var sectionBottom = sectionTop + $(this).outerHeight();
+            var id = $(this).attr('id');
+
+            if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+                currentSectionId = id;
+            }
+        });
+
+        if (currentSectionId) {
+            var $activeLink = $('.dock-link[href="#' + currentSectionId + '"]');
+            if ($activeLink.length && !$activeLink.hasClass('active')) {
+                $dockLinks.removeClass('active');
+                $activeLink.addClass('active');
+                centerActiveDockLink($activeLink);
+            }
+        }
+    });
+
+    // 6. Typed.js Dynamic Role Typing
+    var $typedTarget = $('.typed-text-target');
+    if ($typedTarget.length && typeof Typed !== 'undefined') {
+        var typedStrings = [
+            "Full Stack Software Engineer",
+            "AI Coding Specialist (Google Antigravity & OpenAI Codex)",
+            "Cloud & DevOps Architecture (.NET, Angular, AWS)"
+        ];
+
+        new Typed('.typed-text-target', {
+            strings: typedStrings,
+            typeSpeed: 55,
+            backSpeed: 30,
+            backDelay: 1600,
+            smartBackspace: true,
+            loop: true
+        });
     }
-    
-    // Portfolio Isotope Filter
-    var $grid = $('.portfolio-container').isotope({
-        itemSelector: '.portfolio-item',
-        layoutMode: 'masonry',
-        transitionDuration: '0.4s'
-    });
 
-    $(window).on('load', function () {
-        $grid.isotope('layout');
-    });
+    // 7. Portfolio Isotope Filter & Layout
+    if ($.fn.isotope) {
+        var $grid = $('.portfolio-container').isotope({
+            itemSelector: '.portfolio-item',
+            percentPosition: true,
+            masonry: {
+                columnWidth: '.project-sizer'
+            },
+            transitionDuration: '0.35s'
+        });
 
-    $('#portfolio-filter li').on('click', function () {
-        $("#portfolio-filter li").removeClass('filter-active');
-        $(this).addClass('filter-active');
-        var filterValue = $(this).attr('data-filter');
-        $grid.isotope({ filter: filterValue });
-    });
+        // Trigger layout as images load
+        $('.portfolio-container img').each(function () {
+            if (this.complete) {
+                $grid.isotope('layout');
+            } else {
+                $(this).on('load', function () {
+                    $grid.isotope('layout');
+                });
+            }
+        });
+
+        $(window).on('load', function () {
+            $grid.isotope('layout');
+        });
+
+        // Window resize relayout
+        var resizeTimer;
+        $(window).on('resize', function () {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function () {
+                $grid.isotope('layout');
+            }, 150);
+        });
+
+        // Filter button click & keyboard accessibility
+        var handleFilter = function ($btn) {
+            $('#portfolio-filter li')
+                .removeClass('filter-active')
+                .attr('aria-selected', 'false');
+
+            $btn.addClass('filter-active').attr('aria-selected', 'true');
+            var filterValue = $btn.attr('data-filter');
+            $grid.isotope({ filter: filterValue });
+        };
+
+        $('#portfolio-filter li').on('click', function () {
+            handleFilter($(this));
+        });
+
+        $('#portfolio-filter li').on('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handleFilter($(this));
+            }
+        });
+    }
 
 })(jQuery);

@@ -12,7 +12,7 @@ $(function () {
             var subject = $("input#subject").val();
             var message = $("textarea#message").val();
 
-            $this = $("#sendMessageButton");
+            var $this = $("#sendMessageButton");
             $this.prop("disabled", true);
 
             $.ajax({
@@ -68,5 +68,10 @@ $(function () {
 
     $('#name').focus(function () {
         $('#success').html('');
+    });
+
+    $(document).on('click', '.alert .close', function (e) {
+        e.preventDefault();
+        $(this).closest('.alert').fadeOut(200);
     });
 });

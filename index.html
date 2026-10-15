@@ -219,16 +219,18 @@
                     </div>
 
                     <!-- Category Filter Dock -->
-                    <ul class="portfolio-filter-dock" id="portfolio-filter" role="tablist">
-                        <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-ai">AI Projects</li>
-                        <li data-filter=".filter-software">Software</li>
-                        <li data-filter=".filter-network">Networking</li>
-                        <li data-filter=".filter-other">Other</li>
+                    <ul class="portfolio-filter-dock" id="portfolio-filter" role="tablist" aria-label="Filter Projects by Category">
+                        <li data-filter="*" class="filter-active" role="tab" tabindex="0" aria-selected="true">All</li>
+                        <li data-filter=".filter-ai" role="tab" tabindex="0" aria-selected="false">AI Projects</li>
+                        <li data-filter=".filter-software" role="tab" tabindex="0" aria-selected="false">Software</li>
+                        <li data-filter=".filter-network" role="tab" tabindex="0" aria-selected="false">Networking</li>
+                        <li data-filter=".filter-other" role="tab" tabindex="0" aria-selected="false">Other</li>
                     </ul>
 
                     <!-- Projects Grid Container -->
                     <div class="projects-grid portfolio-container">
+                        <!-- Masonry Column Sizer for Isotope -->
+                        <div class="project-sizer"></div>
                         
                         <!-- FEATURED AI PROJECT: Apex LifeOS -->
                         <div class="portfolio-item filter-ai filter-software project-card featured-card">
@@ -665,28 +667,32 @@
                     </div>
 
                     <div class="contact-card">
-                        <div id="success"></div>
+                        <div id="success" role="alert" aria-live="polite"></div>
                         <form name="sentMessage" id="contactForm" novalidate="novalidate">
                             <div class="contact-form-grid">
-                                <div class="form-group-sawad">
+                                <div class="form-group-sawad control-group">
                                     <label for="name" class="form-label-sawad">Your Name</label>
                                     <input type="text" class="form-input-sawad" id="name" placeholder="John Doe" required="required" data-validation-required-message="Please enter your name" />
+                                    <p class="help-block text-danger"></p>
                                 </div>
-                                <div class="form-group-sawad">
+                                <div class="form-group-sawad control-group">
                                     <label for="email" class="form-label-sawad">Your Email</label>
                                     <input type="email" class="form-input-sawad" id="email" placeholder="john@example.com" required="required" data-validation-required-message="Please enter your email" />
+                                    <p class="help-block text-danger"></p>
                                 </div>
-                                <div class="form-group-sawad contact-field-full">
+                                <div class="form-group-sawad contact-field-full control-group">
                                     <label for="subject" class="form-label-sawad">Subject or Project Scope</label>
                                     <input type="text" class="form-input-sawad" id="subject" placeholder="Project Inquiry / Job Opportunity" required="required" data-validation-required-message="Please enter a subject" />
+                                    <p class="help-block text-danger"></p>
                                 </div>
-                                <div class="form-group-sawad contact-field-full">
+                                <div class="form-group-sawad contact-field-full control-group">
                                     <label for="message" class="form-label-sawad">Message</label>
                                     <textarea class="form-input-sawad" id="message" placeholder="Tell me about your project, timeline, or engineering goals..." required="required" data-validation-required-message="Please enter your message"></textarea>
+                                    <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <button class="btn-lime contact-submit-btn" type="submit" id="sendMessageButton">
-                                <i class="far fa-paper-plane"></i> Send Message
+                                <i class="far fa-paper-plane" aria-hidden="true"></i> Send Message
                             </button>
                         </form>
 
