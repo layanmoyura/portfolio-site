@@ -752,20 +752,19 @@ a:hover {
     box-shadow: 0 4px 14px rgba(197, 255, 65, 0.25);
 }
 
-/* Projects grid container */
+/* Projects Flex Grid Container */
 .projects-grid {
-    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
     width: 100%;
+    position: relative;
 }
 
-/* Sizer element for Isotope column calculation */
-.project-sizer,
 .project-card {
+    flex: 0 0 calc(50% - 12px);
     width: calc(50% - 12px);
-    margin-bottom: 24px;
-}
-
-.project-card {
+    max-width: calc(50% - 12px);
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-xl);
@@ -774,6 +773,7 @@ a:hover {
     flex-direction: column;
     transition: var(--transition-smooth);
     position: relative;
+    box-sizing: border-box;
 }
 
 .project-card:hover {
@@ -1471,10 +1471,14 @@ textarea.form-input-sawad {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
     
-    .project-sizer,
+    .projects-grid {
+        gap: 20px;
+    }
+
     .project-card {
+        flex: 0 0 100% !important;
         width: 100% !important;
-        margin-bottom: 20px;
+        max-width: 100% !important;
     }
     
     .tools-grid {

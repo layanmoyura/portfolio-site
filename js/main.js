@@ -142,62 +142,44 @@
         });
     }
 
-    // 7. Portfolio Isotope Filter & Layout
-    if ($.fn.isotope) {
-        var $grid = $('.portfolio-container').isotope({
-            itemSelector: '.portfolio-item',
-            percentPosition: true,
-            masonry: {
-                columnWidth: '.project-sizer'
-            },
-            transitionDuration: '0.35s'
-        });
+    // 7. Portfolio Flex Grid Filter
+    var handleFilter = function ($btn) {
+        $('#portfolio-filter li')
+            .removeClass('filter-active')
+            .attr('aria-selected', 'false');
 
-        // Trigger layout as images load
-        $('.portfolio-container img').each(function () {
-            if (this.complete) {
-                $grid.isotope('layout');
-            } else {
-                $(this).on('load', function () {
-                    $grid.isotope('layout');
-                });
-            }
-        });
+        $btn.addClass('filter-active').attr('aria-selected', 'true');
+        var filterValue = $btn.attr('data-filter');
 
-        $(window).on('load', function () {
-            $grid.isotope('layout');
-        });
+        var $items = $('.portfolio-item');
+        if (filterValue === '*' || !filterValue) {
+            $items.each(function () {
+                var $item = $(this);
+                $item.stop(true, true).css('display', 'flex').fadeTo(250, 1);
+            });
+        } else {
+            $items.each(function () {
+                var $item = $(this);
+                if ($item.is(filterValue)) {
+                    $item.stop(true, true).css('display', 'flex').fadeTo(250, 1);
+                } else {
+                    $item.stop(true, true).fadeTo(200, 0, function () {
+                        $(this).css('display', 'none');
+                    });
+                }
+            });
+        }
+    };
 
-        // Window resize relayout
-        var resizeTimer;
-        $(window).on('resize', function () {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(function () {
-                $grid.isotope('layout');
-            }, 150);
-        });
+    $('#portfolio-filter li').on('click', function () {
+        handleFilter($(this));
+    });
 
-        // Filter button click & keyboard accessibility
-        var handleFilter = function ($btn) {
-            $('#portfolio-filter li')
-                .removeClass('filter-active')
-                .attr('aria-selected', 'false');
-
-            $btn.addClass('filter-active').attr('aria-selected', 'true');
-            var filterValue = $btn.attr('data-filter');
-            $grid.isotope({ filter: filterValue });
-        };
-
-        $('#portfolio-filter li').on('click', function () {
+    $('#portfolio-filter li').on('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
             handleFilter($(this));
-        });
-
-        $('#portfolio-filter li').on('keydown', function (e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                handleFilter($(this));
-            }
-        });
-    }
+        }
+    });
 
 })(jQuery);
