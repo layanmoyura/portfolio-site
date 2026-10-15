@@ -1591,4 +1591,340 @@ a:focus {
 }
 
 
+/*************************************************/
+/***** Modern Semantic UI Polish Enhancements *****/
+/*************************************************/
+
+/* Skip link for keyboard accessibility */
+.skip-link {
+    position: absolute;
+    top: -60px;
+    left: 15px;
+    background: #020246;
+    color: #ffffff;
+    padding: 10px 18px;
+    z-index: 10000;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    transition: top 0.25s ease;
+}
+
+.skip-link:focus {
+    top: 15px;
+    color: #ffffff;
+    outline: 2px solid #ffffff;
+}
+
+/* Glassmorphism & polished sticky navbar */
+@media (min-width: 992px) {
+    .navbar.nav-sticky {
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        background: rgba(255, 255, 255, 0.94) !important;
+        box-shadow: 0 4px 20px rgba(2, 2, 70, 0.08);
+        border-bottom: 1px solid rgba(2, 2, 70, 0.06);
+    }
+}
+
+/* Global button and input modern border-radius */
+.btn {
+    border-radius: 6px;
+}
+
+.hero .hero-btn .btn {
+    border-radius: 6px;
+}
+
+.about .btn {
+    border-radius: 6px;
+}
+
+/* Service items: modern cards with subtle border & elevation */
+.service .service-item {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    background: #ffffff;
+    border: 1px solid rgba(2, 2, 70, 0.06);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service .service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(2, 2, 70, 0.14);
+}
+
+.service .service-icon {
+    border-radius: 12px 0 0 12px;
+}
+
+/* Skills: modern rounded progress bar with sleek gradient */
+.about .progress {
+    height: 10px;
+    border-radius: 999px;
+    background: #e2e8f0;
+    overflow: hidden;
+}
+
+.about .progress .progress-bar {
+    border-radius: 999px;
+    background: linear-gradient(90deg, #020246 0%, #1e1e82 100%);
+    box-shadow: 0 2px 6px rgba(2, 2, 70, 0.25);
+}
+
+/* Experience timeline: modern elevated card styling */
+.experience .timeline .timeline-text {
+    border-radius: 10px;
+    border: 1px solid rgba(2, 2, 70, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience .timeline .timeline-item:hover .timeline-text {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(2, 2, 70, 0.09);
+}
+
+.experience .timeline .timeline-item::after {
+    box-shadow: 0 0 0 4px rgba(2, 2, 70, 0.15);
+}
+
+/* Tech tag badges */
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.tech-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: #020246;
+    background: rgba(2, 2, 70, 0.07);
+    border: 1px solid rgba(2, 2, 70, 0.12);
+    border-radius: 999px;
+    transition: all 0.2s ease;
+}
+
+.tech-badge:hover {
+    background: #020246;
+    color: #ffffff;
+}
+
+.tech-badge-featured {
+    background: #020246;
+    color: #ffffff;
+    border-color: #020246;
+}
+
+/* Portfolio Filters: modern pills */
+.portfolio #portfolio-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+
+.portfolio #portfolio-filter li {
+    border-radius: 999px;
+    padding: 8px 20px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    box-shadow: none;
+    border: 1px solid #020246;
+    background: #ffffff;
+    color: #020246;
+    transition: all 0.25s ease;
+}
+
+.portfolio #portfolio-filter li:hover,
+.portfolio #portfolio-filter li.filter-active {
+    background: #020246;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(2, 2, 70, 0.25);
+    border-color: #020246;
+}
+
+/* Portfolio Cards: modern responsive wrap */
+.portfolio .portfolio-wrap {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(2, 2, 70, 0.06);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio .portfolio-item:hover .portfolio-wrap {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(2, 2, 70, 0.13);
+}
+
+.portfolio .portfolio-img {
+    height: 220px;
+    overflow: hidden;
+    background: #0d0d2b;
+}
+
+.portfolio .portfolio-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transform: scale(1.02);
+    transition: transform 0.5s ease;
+}
+
+.portfolio .portfolio-item:hover .portfolio-img img {
+    transform: scale(1.08);
+    margin-left: 0;
+}
+
+.portfolio .portfolio-text {
+    height: auto;
+    min-height: 64px;
+    width: calc(100% - 24px);
+    margin: -24px 12px 18px 12px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.portfolio .portfolio-info {
+    max-width: calc(100% - 90px);
+    overflow: hidden;
+}
+
+.portfolio .portfolio-info h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #020246;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.portfolio .portfolio-category {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #797979;
+    margin-top: 2px;
+}
+
+.portfolio .portfolio-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+}
+
+.portfolio .portfolio-actions a.btn,
+.portfolio .portfolio-text a.btn {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    padding: 0;
+    border-radius: 6px;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #020246;
+    color: #ffffff;
+    box-shadow: none;
+    border: 1px solid #020246;
+    transition: all 0.25s ease;
+}
+
+.portfolio .portfolio-actions a.btn:hover,
+.portfolio .portfolio-text a.btn:hover {
+    background: transparent;
+    color: #020246;
+    transform: scale(1.08);
+}
+
+/* Blog Cards Modern Polish */
+.blog .blog-item {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid rgba(2, 2, 70, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.blog .blog-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(2, 2, 70, 0.12);
+}
+
+.blog .blog-img {
+    height: 220px;
+    overflow: hidden;
+}
+
+.blog .blog-img img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog .blog-text {
+    border-radius: 0 0 12px 12px;
+}
+
+.blog .blog-item a.btn {
+    border-radius: 6px;
+}
+
+/* Contact Modern Polish */
+.contact {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.contact .contact-form input,
+.contact .contact-form textarea {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact .contact-form input:focus,
+.contact .contact-form textarea:focus {
+    border-bottom: 2px solid #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contact .contact-form .btn {
+    border-radius: 6px;
+}
+
+/* Back to Top Button Modern */
+.back-to-top {
+    border-radius: 50%;
+    background: #020246;
+    box-shadow: 0 4px 16px rgba(2, 2, 70, 0.3);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.back-to-top:hover {
+    transform: translateY(-3px);
+    background: #111158;
+}
+
+
+
 
