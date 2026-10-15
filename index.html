@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <title>Layan Moyura — Full Stack Software Engineer | AI & Cloud Developer</title>
 
-        <!-- Primary Meta Tags -->
+        <!-- Primary meta tags -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Layan Moyura — Full Stack Software Engineer with 3+ years of experience in web applications, cloud architecture, DevOps, and modern AI coding (Google Antigravity, OpenAI Codex). Creator of Apex LifeOS AI Finance Tracker.">
+        <meta name="description" content="Layan Moyura — Full Stack Software Engineer with 3+ years of experience in web development, cloud computing, DevOps, networking, and modern AI coding (Google Antigravity, OpenAI Codex). Creator of Apex LifeOS AI Finance Tracker.">
         <meta name="keywords" content="Layan Moyura, portfolio, full stack developer, software engineer, AI coding, Google Antigravity, OpenAI Codex, Apex LifeOS, AI finance tracker, cloud computing, devops, angular, dotnet core, sri lanka">
         <meta name="author" content="Layan Moyura">
         <meta name="robots" content="index, follow">
@@ -15,24 +15,23 @@
         <!-- Favicon -->
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-        <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://layanmoyura.github.io/portfolio-site/">
+        <!-- Social / Open Graph -->
         <meta property="og:title" content="Layan Moyura — Full Stack Software Engineer & AI Developer">
-        <meta property="og:description" content="Portfolio showcasing 3+ years of software engineering experience, AI-assisted development (Google Antigravity & Codex), and Apex LifeOS.">
+        <meta property="og:description" content="Portfolio showcasing 3+ years experience in full stack software engineering, cloud computing, DevOps, AI-assisted development (Google Antigravity, OpenAI Codex), and Apex LifeOS.">
         <meta property="og:image" content="https://layanmoyura.github.io/portfolio-site/img/hero.png">
+        <meta property="og:url" content="https://layanmoyura.github.io/portfolio-site/">
+        <meta property="og:type" content="website">
         <meta property="og:site_name" content="Layan Moyura">
         <meta property="og:locale" content="en_US">
 
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:url" content="https://layanmoyura.github.io/portfolio-site/">
         <meta name="twitter:title" content="Layan Moyura — Full Stack Software Engineer & AI Developer">
         <meta name="twitter:description" content="Portfolio showcasing projects in web development, cloud computing, DevOps, AI coding (Google Antigravity, Codex), and Apex LifeOS.">
         <meta name="twitter:image" content="https://layanmoyura.github.io/portfolio-site/img/hero.png">
         <meta name="twitter:site" content="@LayanMoyura">
 
-        <!-- JSON-LD Structured Data -->
+        <!-- JSON-LD structured data (Person) -->
         <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -63,677 +62,624 @@
         }
         </script>
 
-        <!-- Google Fonts (Poppins & Inter matching Sawad design) -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        <!-- FontAwesome 5 Icons -->
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        
-        <!-- Lightbox CSS -->
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
         <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-        <!-- Sawad Framer Design System Stylesheet -->
+        <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
     </head>
-    <body>
-        <!-- Accessibility Skip Link -->
-        <a class="skip-link" href="#hero">Skip to main content</a>
+    <body data-spy="scroll" data-target=".navbar" data-offset="51">
+        <!-- Skip Link for Accessibility -->
+        <a class="skip-link" href="#main-content">Skip to main content</a>
 
-        <!-- Preloader -->
-        <div id="loader" class="show">
-            <div class="loader"></div>
-        </div>
+        <!-- Header / Nav Bar Start -->
+        <header class="site-header">
+            <nav class="navbar navbar-expand-lg bg-light navbar-light" aria-label="Main Navigation">
+                <div class="container-fluid">
+                    <a href="index.html" class="navbar-brand" id="PortFolio">PortFolio</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-        <!-- Sawad Two-Column Bento Grid Wrapper -->
-        <div class="sawad-wrapper">
-            
-            <!-- LEFT COLUMN: STICKY PROFILE SIDEBAR -->
-            <aside class="sidebar-wrapper" aria-label="Profile and Identity">
-                <div class="profile-card">
-                    <!-- Available Status Pill -->
-                    <div class="status-badge">
-                        <span class="status-dot"></span> Available for work
-                    </div>
-
-                    <!-- Profile Photo with Rounded Frame -->
-                    <div class="avatar-container">
-                        <img src="img/about.png" alt="Layan Moyura portrait">
-                    </div>
-
-                    <!-- Name and Title -->
-                    <h2 class="profile-name">Layan Moyura</h2>
-                    <div class="profile-role">Full Stack & AI Engineer</div>
-                    
-                    <p class="profile-bio">
-                        A Software Engineer with 3+ years experience who develops innovative, scalable solutions across web, cloud, and modern AI coding environments.
-                    </p>
-
-                    <!-- Social Channels -->
-                    <div class="profile-socials">
-                        <a href="https://linkedin.com/in/layanmoyura" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn profile" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/layanmoyura" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub profile" title="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.hackerearth.com/@layan_moyura" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="HackerRank profile" title="HackerRank"><i class="fab fa-hackerrank"></i></a>
-                        <a href="https://twitter.com/LayanMoyura" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter profile" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://web.facebook.com/layanmoyura/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook profile" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    </div>
-
-                    <!-- Quick Action Buttons -->
-                    <div class="profile-actions">
-                        <a href="#contact" class="btn-lime"><i class="far fa-paper-plane"></i> Let's Talk</a>
-                        <a href="others/Mr.Layan_Moyura.pdf" target="_blank" rel="noopener noreferrer" class="btn-outline-sawad"><i class="far fa-file-pdf"></i> Download CV</a>
-                    </div>
-
-                    <!-- Location and Direct Email -->
-                    <div class="profile-meta">
-                        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Colombo, Sri Lanka</span>
-                        <span class="meta-item"><i class="far fa-envelope"></i> layanmoyura@gmail.com</span>
-                    </div>
-                </div>
-            </aside>
-
-            <!-- RIGHT COLUMN: MAIN SCROLLING FEED -->
-            <main class="main-feed" id="main-content">
-                
-                <!-- Floating Navigation Pill Dock (Sticky Top) -->
-                <div class="floating-dock-wrapper">
-                    <nav class="floating-dock" aria-label="Quick Section Navigation">
-                        <a href="#hero" class="dock-link active">Home</a>
-                        <a href="#projects" class="dock-link">Projects</a>
-                        <a href="#experience" class="dock-link">Experience</a>
-                        <a href="#tools" class="dock-link">Tools</a>
-                        <a href="#thoughts" class="dock-link">Thoughts</a>
-                        <a href="#contact" class="dock-link">Contact</a>
-                    </nav>
-                </div>
-
-                <!-- 1. HERO SECTION -->
-                <section class="hero-card" id="hero" aria-label="Hero Section">
-                    <div class="hero-intro-pill">
-                        <span class="dot"></span> Software Engineer • 3+ Years Exp
-                    </div>
-
-                    <h1 class="hero-giant-title">
-                        SOFTWARE <span class="accent-text">ENGINEER</span>
-                    </h1>
-
-                    <p class="hero-statement">
-                        Passionate about creating intuitive, scalable, and high-performance digital systems. Specialize in transforming complex ideas into beautifully crafted, reliable products with modern full-stack technologies and agentic AI coding workflows.
-                    </p>
-
-                    <!-- Typed Rotating Dynamic Title -->
-                    <div class="typed-wrapper">
-                        <i class="fas fa-terminal"></i>
-                        <span class="typed-text-target"></span>
-                        <span class="typed-source" style="display:none;">Full Stack Software Engineer, AI Coding Specialist (Google Antigravity & OpenAI Codex), Cloud & DevOps Engineer</span>
-                    </div>
-
-                    <!-- Stats Row (Bento Grid) -->
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-num">+3</div>
-                            <p class="stat-label">YEARS OF<br>EXPERIENCE</p>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-num">+10</div>
-                            <p class="stat-label">PROJECTS<br>COMPLETED</p>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-num">100%</div>
-                            <p class="stat-label">CODE QUALITY<br>& RESILIENCE</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 2. INFINITE MARQUEE TICKER -->
-                <div class="marquee-container" aria-hidden="true">
-                    <div class="marquee-track">
-                        <div class="marquee-content">
-                            <span class="marquee-item"><span class="marquee-dot"></span> AI CODING (GOOGLE ANTIGRAVITY & CODEX)</span>
-                            <span class="marquee-item"><span class="marquee-dot"></span> FULL STACK WEB DEVELOPMENT</span>
-                            <span class="marquee-item"><span class="marquee-dot"></span> CLOUD ARCHITECTURE (AWS & SUPABASE)</span>
-                            <span class="marquee-item"><span class="marquee-dot"></span> DEVOPS & CI/CD AUTOMATION</span>
-                            <span class="marquee-item"><span class="marquee-dot"></span> ANGULAR & .NET CORE</span>
-                            <span class="marquee-item"><span class="marquee-dot"></span> SYSTEM MODERNIZATION</span>
-                        </div>
-                        <div class="marquee-content">
-                            <span class="marquee-item"><span class="marquee-dot"></span> AI CODING (GOOGLE ANTIGRAVITY & CODEX)</span>
-                            <span class="marquee-item"><span class="marquee-dot"></span> FULL STACK WEB DEVELOPMENT</span>
-                            <span class="marquee-item"><span class="marquee-dot"></span> CLOUD ARCHITECTURE (AWS & SUPABASE)</span>
-                            <span class="marquee-item"><span class="marquee-dot"></span> DEVOPS & CI/CD AUTOMATION</span>
-                            <span class="marquee-item"><span class="marquee-dot"></span> ANGULAR & .NET CORE</span>
-                            <span class="marquee-item"><span class="marquee-dot"></span> SYSTEM MODERNIZATION</span>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav ml-auto">
+                            <a href="#home" class="nav-item nav-link active">Home</a>
+                            <a href="#about" class="nav-item nav-link">About</a>
+                            <a href="#service" class="nav-item nav-link">Service</a>
+                            <a href="#experience" class="nav-item nav-link">Experience</a>
+                            <a href="#portfolio" class="nav-item nav-link">Projects</a>
+                            <a href="#blog" class="nav-item nav-link">Blog</a>
+                            <a href="#contact" class="nav-item nav-link">Contact</a>
                         </div>
                     </div>
                 </div>
+            </nav>
+        </header>
+        <!-- Nav Bar End -->
 
-                <!-- 3. RECENT PROJECTS SECTION -->
-                <section id="projects" aria-label="Recent Projects">
-                    <div class="sawad-section-header">
-                        <div>
-                            <span class="section-tag">Portfolio</span>
-                            <h2>RECENT <span class="accent-text">PROJECTS</span></h2>
-                        </div>
-                    </div>
-
-                    <!-- Category Filter Dock -->
-                    <ul class="portfolio-filter-dock" id="portfolio-filter" role="tablist">
-                        <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-ai">AI Projects</li>
-                        <li data-filter=".filter-software">Software</li>
-                        <li data-filter=".filter-network">Networking</li>
-                        <li data-filter=".filter-other">Other</li>
-                    </ul>
-
-                    <!-- Projects Grid Container -->
-                    <div class="projects-grid portfolio-container">
-                        
-                        <!-- FEATURED AI PROJECT: Apex LifeOS -->
-                        <div class="portfolio-item filter-ai filter-software project-card featured-card">
-                            <div class="project-img-wrap">
-                                <span class="project-cat-pill">AI Finance & Personal ERP</span>
-                                <img src="img/portfolio-ai-finance.png" alt="Apex LifeOS AI Finance Tracker and Personal ERP project banner">
+        <!-- Hero Start -->
+        <section class="hero" id="home" aria-label="Introduction">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <p>I'm</p>
+                                <h1>Layan Moyura</h1>
+                                <h2></h2>
+                                <div class="typed-text">Full Stack Software Engineer, AI Coding Specialist (Google Antigravity & OpenAI Codex), Cloud & DevOps Engineer</div>
                             </div>
-                            <div class="project-content">
-                                <div class="project-header-row">
-                                    <h3 class="project-title">Apex LifeOS (AI Finance Tracker)</h3>
-                                    <div class="project-action-icons">
-                                        <a href="img/portfolio-ai-finance.png" data-lightbox="portfolio" data-title="Apex LifeOS — AI Natural Language Ledger (Gemini Flash), Voice Typing (17+ languages), Prompt Guard Security, Haversine GPS Commute & Supabase Cloud Sync" class="action-icon-btn" title="Preview Screenshot" aria-label="Preview Apex LifeOS"><i class="fa fa-eye"></i></a>
-                                        <a href="https://github.com/layanmoyura/ai-finance-tracker" target="_blank" rel="noopener noreferrer" class="action-icon-btn" title="View Source on GitHub" aria-label="View Apex LifeOS on GitHub"><i class="fab fa-github"></i></a>
+                            <div class="hero-btn">
+                                <a class="btn" href="#about">About Me</a>
+                                <a class="btn" href="#contact">Contact Me</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 d-none d-md-block">
+                        <div class="hero-image">
+                            <img src="img/hero.png" alt="Layan Moyura — Full Stack Software Engineer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Hero End -->
+
+        <!-- Main Content Area -->
+        <main id="main-content">
+            <!-- About Start -->
+            <section class="about wow fadeInUp" data-wow-delay="0.1s" id="about" aria-labelledby="about-heading">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="about-img">
+                                <img src="img/about.png" alt="Layan Moyura portrait">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="about-content">
+                                <header class="section-header text-left">
+                                    <p>About Me</p>
+                                    <h2 id="about-heading">3+ Years Experience</h2>
+                                </header>
+                                <div class="about-text">
+                                    <p style="text-align: justify;">
+                                        Results-driven Full Stack Software Engineer with over 3 years of hands-on professional experience building robust web applications, enterprise .NET solutions, cloud infrastructures, and DevOps automation. A passionate practitioner of modern AI-assisted engineering—accelerating system design and high-velocity code development with cutting-edge agentic tools including <strong>Google Antigravity</strong> and <strong>OpenAI Codex</strong>. Dedicated to crafting scalable, reliable, and intelligent software systems that deliver measurable business impact.
+                                    </p>
+                                </div>
+                                
+                                <div class="skills">
+                                    <div class="skill-name">
+                                        <p>AI Coding & Agentic Engineering (Antigravity, Codex)</p><p>85%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="skill-name">
+                                        <p>Full Stack Web Development (Angular, .NET, TypeScript)</p><p>85%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="skill-name">
+                                        <p>Cloud Computing & Databases (AWS, Supabase, MSSQL)</p><p>80%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="skill-name">
+                                        <p>DevOps & CI/CD (Azure DevOps, GitHub Actions)</p><p>75%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="skill-name">
+                                        <p>Networking & Systems Architecture</p><p>70%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
-                                <p class="project-desc">
-                                    A unified personal ERP connecting multi-currency finances, physical movement, and daily operations. Powered by Google Gemini Flash AI for natural language transaction logging, hands-free voice typing across 17+ languages, defense-in-depth prompt guard security, Haversine GPS commute tracking, and Supabase cloud sync.
+                                <a class="btn" href="others/Mr.Layan_Moyura.pdf" target="_blank" rel="noopener noreferrer"><i class="far fa-file-pdf mr-2"></i>My CV/Resume</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About End -->
+            
+            <!-- Service Start -->
+            <section class="service" id="service" aria-labelledby="service-heading">
+                <div class="container">
+                    <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                        <p>What I Do</p>
+                        <h2 id="service-heading">Services & Expertise</h2>
+                    </header>
+                    <div class="row">
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
+                            <div class="service-item">
+                                <div class="service-icon">
+                                    <i class="fa fa-laptop-code"></i>
+                                </div>
+                                <div class="service-text">
+                                    <h3>Full Stack Web Development</h3>
+                                    <p style="text-align: justify;">
+                                        Proficient in building modern, responsive, and secure web applications across front-end (Angular, HTML5, modern CSS) and back-end (.NET Core Web API, MVC, C#).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="service-item">
+                                <div class="service-icon">
+                                    <i class="fa fa-robot"></i>
+                                </div>
+                                <div class="service-text">
+                                    <h3>AI Coding & Agentic Engineering</h3>
+                                    <p style="text-align: justify;">
+                                        Accelerating software delivery using advanced AI tools—including Google Antigravity, OpenAI Codex, and generative LLM APIs—to architect intelligent applications and automated workflows.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="service-item">
+                                <div class="service-icon">
+                                    <i class="fa fa-cloud"></i>
+                                </div>
+                                <div class="service-text">
+                                    <h3>Cloud Computing & Architecture</h3>
+                                    <p style="text-align: justify;">
+                                        Enthusiastic about architecting resilient cloud systems with AWS, Supabase synchronization, serverless computing, and managed cloud database environments.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="service-item">
+                                <div class="service-icon">
+                                    <i class="fa fa-cogs"></i>
+                                </div>
+                                <div class="service-text">
+                                    <h3>DevOps & CI/CD Automation</h3>
+                                    <p style="text-align: justify;">
+                                        Committed to streamlining deployment pipelines, containerization, and agile workflows utilizing Azure DevOps, GitHub Actions, and automated testing suites.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="service-item">
+                                <div class="service-icon">
+                                    <i class="fa fa-network-wired"></i>
+                                </div>
+                                <div class="service-text">
+                                    <h3>Networking & Virtualization</h3>
+                                    <p style="text-align: justify;">
+                                        Dedicated to designing robust network infrastructures, VMware ESXi server virtualization, routing, firewalls, and real-time PRTG network monitoring.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="service-item">
+                                <div class="service-icon">
+                                    <i class="fa fa-database"></i>
+                                </div>
+                                <div class="service-text">
+                                    <h3>Database & API Engineering</h3>
+                                    <p style="text-align: justify;">
+                                        Engineering scalable database schemas, high-throughput stored procedures, and RESTful APIs with MSSQL, PostgreSQL, and modern ORMs.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Service End -->
+            
+            <!-- Experience Start -->
+            <section class="experience" id="experience" aria-labelledby="experience-heading">
+                <div class="container">
+                    <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                        <p>My Journey</p>
+                        <h2 id="experience-heading">Education & Experience</h2>
+                    </header>
+                    <div class="timeline">
+                        <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+                            <div class="timeline-text">
+                                <div class="timeline-date"><time>Jan 2019 - Feb 2024</time></div>
+                                <h2>Engineering Graduate</h2>
+                                <h4>Faculty of Engineering, University of Ruhuna, Sri Lanka</h4>
+                                <p>
+                                    Completed B.Sc (Hons) in Electrical and Information Engineering Degree Programme with Second Upper Class
                                 </p>
-                                <div class="project-tech-tags">
-                                    <span class="tech-tag">Google Gemini Flash</span>
-                                    <span class="tech-tag">Voice STT (17+ Languages)</span>
-                                    <span class="tech-tag">Prompt Guard</span>
-                                    <span class="tech-tag">Supabase</span>
-                                    <span class="tech-tag">Haversine GPS Engine</span>
+                                <p><strong>Overall GPA: 3.63 / 4.00</strong></p>
+                                <div class="tech-badges">
+                                    <span class="tech-badge">Electrical & Info Eng</span>
+                                    <span class="tech-badge">Computer Networks</span>
+                                    <span class="tech-badge">Software Engineering</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
+                            <div class="timeline-text">
+                                <div class="timeline-date"><time>Apr 2022 - Jul 2022</time></div>
+                                <h2>Systems Engineer Intern</h2>
+                                <h4>SriLankan Airlines</h4>
+                                <p>
+                                    Gained enterprise systems administration and networking experience across mission-critical aviation infrastructure.
+                                </p>
+                                <div class="tech-badges">
+                                    <span class="tech-badge">VMware ESXi</span>
+                                    <span class="tech-badge">VMware ThinApp</span>
+                                    <span class="tech-badge">Routing & Switching</span>
+                                    <span class="tech-badge">Firewalls</span>
+                                    <span class="tech-badge">PRTG Monitoring</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+                            <div class="timeline-text">
+                                <div class="timeline-date"><time>Oct 2023 - Apr 2024</time></div>
+                                <h2>Software Engineer Intern</h2>
+                                <h4>Soft Gallery (PVT) LTD.</h4>
+                                <p>
+                                    Engineered scalable web applications and enterprise services within an Agile SCRUM environment.
+                                </p>
+                                <div class="tech-badges">
+                                    <span class="tech-badge">Angular</span>
+                                    <span class="tech-badge">.NET Core Web API</span>
+                                    <span class="tech-badge">Unit Testing</span>
+                                    <span class="tech-badge">AWS</span>
+                                    <span class="tech-badge">Azure DevOps</span>
+                                    <span class="tech-badge">Postgres</span>
+                                    <span class="tech-badge">CI/CD</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
+                            <div class="timeline-text">
+                                <div class="timeline-date"><time>May 2024 - Jan 2025</time></div>
+                                <h2>Associate Software Engineer</h2>
+                                <h4>Soft Gallery (PVT) LTD.</h4>
+                                <p>
+                                    Promoted to associate role delivering high-reliability web and desktop applications, microservices, and database optimizations.
+                                </p>
+                                <div class="tech-badges">
+                                    <span class="tech-badge">Angular</span>
+                                    <span class="tech-badge">.NET Core</span>
+                                    <span class="tech-badge">Windows Forms</span>
+                                    <span class="tech-badge">AWS Cloud</span>
+                                    <span class="tech-badge">MSSQL</span>
+                                    <span class="tech-badge">Agile Delivery</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+                            <div class="timeline-text">
+                                <div class="timeline-date"><time>Mar 2025 - Present</time></div>
+                                <h2>Software Developer</h2>
+                                <h4>Vogue Jewellers (PVT) LTD.</h4>
+                                <p>
+                                    Leading software modernization, developing enterprise desktop & backend solutions, and integrating modern AI-assisted coding practices.
+                                </p>
+                                <div class="tech-badges">
+                                    <span class="tech-badge tech-badge-featured">AI Coding (Antigravity & Codex)</span>
+                                    <span class="tech-badge">.NET & C#</span>
+                                    <span class="tech-badge">WinForms</span>
+                                    <span class="tech-badge">MSSQL</span>
+                                    <span class="tech-badge">Git & GitHub</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Experience End -->
+
+            <!-- Portfolio Start -->
+            <section class="portfolio" id="portfolio" aria-labelledby="portfolio-heading">
+                <div class="container">
+                    <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                        <p>WHAT I'VE DONE</p>
+                        <h2 id="portfolio-heading">Featured Projects</h2>
+                    </header>
+                    <div class="row">
+                        <div class="col-12">
+                            <ul id="portfolio-filter" role="tablist" aria-label="Project Categories">
+                                <li data-filter="*" class="filter-active">All</li>
+                                <li data-filter=".filter-ai">AI Projects</li>
+                                <li data-filter=".filter-1">Software Projects</li>
+                                <li data-filter=".filter-2">Networking Projects</li>
+                                <li data-filter=".filter-3">Other Projects</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row portfolio-container">
+                        <!-- Apex LifeOS AI Finance Tracker (Featured AI Project) -->
+                        <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-ai filter-1 wow fadeInUp" data-wow-delay="0.0s">
+                            <div class="portfolio-wrap">
+                                <div class="portfolio-img">
+                                    <img src="img/portfolio-ai-finance.png" alt="Apex LifeOS AI Finance Tracker and Personal ERP project banner">
+                                </div>
+                                <div class="portfolio-text">
+                                    <div class="portfolio-info">
+                                        <h3>Apex LifeOS</h3>
+                                        <span class="portfolio-category">AI Finance & Operations ERP</span>
+                                    </div>
+                                    <div class="portfolio-actions">
+                                        <a class="btn" href="img/portfolio-ai-finance.png" data-lightbox="portfolio" data-title="Apex LifeOS — AI Natural Language Ledger (Gemini Flash), Voice Typing (17+ languages), Prompt Guard Security, Haversine GPS Commute & Supabase Cloud Sync" title="Preview Screenshot" aria-label="Preview Apex LifeOS"><i class="fa fa-eye"></i></a>
+                                        <a class="btn" href="https://github.com/layanmoyura/ai-finance-tracker" target="_blank" rel="noopener noreferrer" title="View GitHub Repository" aria-label="View Apex LifeOS on GitHub"><i class="fab fa-github"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- MPTCP Router -->
-                        <div class="portfolio-item filter-network project-card">
-                            <div class="project-img-wrap">
-                                <span class="project-cat-pill">Networking & Protocols</span>
-                                <img src="img/portfolio-1.jpg" alt="MPTCP Router project screenshot">
-                            </div>
-                            <div class="project-content">
-                                <div class="project-header-row">
-                                    <h3 class="project-title">MPTCP Router</h3>
-                                    <div class="project-action-icons">
-                                        <a href="img/portfolio-1.jpg" data-lightbox="portfolio" data-title="MPTCP Router — Multipath TCP routing algorithm combining WiFi and LTE paths for higher bandwidth and reduced latency" class="action-icon-btn" title="Preview Screenshot" aria-label="Preview MPTCP Router"><i class="fa fa-eye"></i></a>
-                                    </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="portfolio-wrap">
+                                <div class="portfolio-img">
+                                    <img src="img/portfolio-1.jpg" alt="MPTCP Router project screenshot">
                                 </div>
-                                <p class="project-desc">
-                                    Multipath TCP routing algorithm combining simultaneous WiFi and LTE channels for increased throughput and fault tolerance.
-                                </p>
-                                <div class="project-tech-tags">
-                                    <span class="tech-tag">MPTCP</span>
-                                    <span class="tech-tag">Linux</span>
-                                    <span class="tech-tag">Routing Protocols</span>
+                                <div class="portfolio-text">
+                                    <div class="portfolio-info">
+                                        <h3>MPTCP Router</h3>
+                                        <span class="portfolio-category">Networking & Protocols</span>
+                                    </div>
+                                    <div class="portfolio-actions">
+                                        <a class="btn" href="img/portfolio-1.jpg" data-lightbox="portfolio" data-title="MPTCP Router — Multipath TCP routing algorithm for enhanced bandwidth and reduced latency" title="Preview Screenshot" aria-label="Preview MPTCP Router"><i class="fa fa-eye"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- VEGE.COM Web App -->
-                        <div class="portfolio-item filter-software project-card">
-                            <div class="project-img-wrap">
-                                <span class="project-cat-pill">Full Stack Web App</span>
-                                <img src="img/portfolio-2.png" alt="VEGE.COM Web App screenshot">
-                            </div>
-                            <div class="project-content">
-                                <div class="project-header-row">
-                                    <h3 class="project-title">VEGE.COM Web App</h3>
-                                    <div class="project-action-icons">
-                                        <a href="img/portfolio-2.png" data-lightbox="portfolio" data-title="VEGE.COM — Full Stack Agricultural Marketplace Web Application" class="action-icon-btn" title="Preview Screenshot" aria-label="Preview VEGE.COM"><i class="fa fa-eye"></i></a>
-                                    </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="portfolio-wrap">
+                                <div class="portfolio-img">
+                                    <img src="img/portfolio-2.png" alt="VEGE.COM Web App screenshot">
                                 </div>
-                                <p class="project-desc">
-                                    Full-stack web application designed for agricultural marketplace management, connecting farmers directly with commercial buyers.
-                                </p>
-                                <div class="project-tech-tags">
-                                    <span class="tech-tag">Angular</span>
-                                    <span class="tech-tag">.NET Core API</span>
-                                    <span class="tech-tag">MSSQL</span>
+                                <div class="portfolio-text">
+                                    <div class="portfolio-info">
+                                        <h3>VEGE.COM Web App</h3>
+                                        <span class="portfolio-category">Full Stack Web Application</span>
+                                    </div>
+                                    <div class="portfolio-actions">
+                                        <a class="btn" href="img/portfolio-2.png" data-lightbox="portfolio" data-title="VEGE.COM — Full Stack Web Application for Agricultural Marketplace" title="Preview Screenshot" aria-label="Preview VEGE.COM Web App"><i class="fa fa-eye"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- E2E Encrypted Chat App -->
-                        <div class="portfolio-item filter-software project-card">
-                            <div class="project-img-wrap">
-                                <span class="project-cat-pill">Security & Messaging</span>
-                                <img src="img/portfolio-3.png" alt="E2E Encrypted Chat App screenshot">
-                            </div>
-                            <div class="project-content">
-                                <div class="project-header-row">
-                                    <h3 class="project-title">E2E Encrypted Chat</h3>
-                                    <div class="project-action-icons">
-                                        <a href="img/portfolio-3.png" data-lightbox="portfolio" data-title="E2E Encrypted Chat App — End-to-end encrypted messaging application" class="action-icon-btn" title="Preview Screenshot" aria-label="Preview Encrypted Chat"><i class="fa fa-eye"></i></a>
-                                    </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="portfolio-wrap">
+                                <div class="portfolio-img">
+                                    <img src="img/portfolio-3.png" alt="E2E Encrypted Chat App screenshot">
                                 </div>
-                                <p class="project-desc">
-                                    Secure real-time web chat service with client-side end-to-end message encryption, ensuring private zero-trust communications.
-                                </p>
-                                <div class="project-tech-tags">
-                                    <span class="tech-tag">Cryptography</span>
-                                    <span class="tech-tag">WebSockets</span>
-                                    <span class="tech-tag">JavaScript</span>
+                                <div class="portfolio-text">
+                                    <div class="portfolio-info">
+                                        <h3>E2E Encrypted Chat</h3>
+                                        <span class="portfolio-category">Security & Realtime Messaging</span>
+                                    </div>
+                                    <div class="portfolio-actions">
+                                        <a class="btn" href="img/portfolio-3.png" data-lightbox="portfolio" data-title="E2E Encrypted Chat App — End-to-end encrypted messaging application" title="Preview Screenshot" aria-label="Preview E2E Encrypted Chat App"><i class="fa fa-eye"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Digital Spirit Level -->
-                        <div class="portfolio-item filter-other project-card">
-                            <div class="project-img-wrap">
-                                <span class="project-cat-pill">Embedded & Hardware</span>
-                                <img src="img/portfolio-4.jpg" alt="Digital Spirit Level project image">
-                            </div>
-                            <div class="project-content">
-                                <div class="project-header-row">
-                                    <h3 class="project-title">Digital Spirit Level</h3>
-                                    <div class="project-action-icons">
-                                        <a href="img/portfolio-4.jpg" data-lightbox="portfolio" data-title="Digital Spirit Level — High precision microcontroller-based digital leveling tool" class="action-icon-btn" title="Preview Screenshot" aria-label="Preview Spirit Level"><i class="fa fa-eye"></i></a>
-                                    </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-3 wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="portfolio-wrap">
+                                <div class="portfolio-img">
+                                    <img src="img/portfolio-4.jpg" alt="Digital Spirit Level project image">
                                 </div>
-                                <p class="project-desc">
-                                    Electronic leveling instrument integrating accelerometer sensor telemetry, custom calibration logic, and digital display output.
-                                </p>
-                                <div class="project-tech-tags">
-                                    <span class="tech-tag">Embedded C</span>
-                                    <span class="tech-tag">Sensors</span>
-                                    <span class="tech-tag">Hardware</span>
+                                <div class="portfolio-text">
+                                    <div class="portfolio-info">
+                                        <h3>Digital Spirit Level</h3>
+                                        <span class="portfolio-category">Embedded & Hardware Systems</span>
+                                    </div>
+                                    <div class="portfolio-actions">
+                                        <a class="btn" href="img/portfolio-4.jpg" data-lightbox="portfolio" data-title="Digital Spirit Level — Microcontroller-based high precision leveling device" title="Preview Screenshot" aria-label="Preview Digital Spirit Level"><i class="fa fa-eye"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- ST PIZZA Web App -->
-                        <div class="portfolio-item filter-software project-card">
-                            <div class="project-img-wrap">
-                                <span class="project-cat-pill">E-Commerce Application</span>
-                                <img src="img/portfolio-5.jpg" alt="ST PIZZA Web App screenshot">
-                            </div>
-                            <div class="project-content">
-                                <div class="project-header-row">
-                                    <h3 class="project-title">ST PIZZA Web App</h3>
-                                    <div class="project-action-icons">
-                                        <a href="img/portfolio-5.jpg" data-lightbox="portfolio" data-title="ST PIZZA Web App — Interactive online food ordering platform" class="action-icon-btn" title="Preview Screenshot" aria-label="Preview ST PIZZA"><i class="fa fa-eye"></i></a>
-                                    </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="portfolio-wrap">
+                                <div class="portfolio-img">
+                                    <img src="img/portfolio-5.jpg" alt="ST PIZZA Web App screenshot">
                                 </div>
-                                <p class="project-desc">
-                                    Interactive e-commerce web platform for online pizza ordering with real-time cart calculations and responsive interface.
-                                </p>
-                                <div class="project-tech-tags">
-                                    <span class="tech-tag">Full Stack</span>
-                                    <span class="tech-tag">JavaScript</span>
-                                    <span class="tech-tag">UI/UX</span>
+                                <div class="portfolio-text">
+                                    <div class="portfolio-info">
+                                        <h3>ST PIZZA Web App</h3>
+                                        <span class="portfolio-category">E-Commerce & Food Ordering</span>
+                                    </div>
+                                    <div class="portfolio-actions">
+                                        <a class="btn" href="img/portfolio-5.jpg" data-lightbox="portfolio" data-title="ST PIZZA Web App — Interactive online pizza ordering and management platform" title="Preview Screenshot" aria-label="Preview ST PIZZA Web App"><i class="fa fa-eye"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Rail Ticket WPF App -->
-                        <div class="portfolio-item filter-software project-card">
-                            <div class="project-img-wrap">
-                                <span class="project-cat-pill">Desktop (.NET / WPF)</span>
-                                <img src="img/portfolio-6.jpg" alt="Rail Ticket WPF App screenshot">
-                            </div>
-                            <div class="project-content">
-                                <div class="project-header-row">
-                                    <h3 class="project-title">Rail Ticket WPF App</h3>
-                                    <div class="project-action-icons">
-                                        <a href="img/portfolio-6.jpg" data-lightbox="portfolio" data-title="Rail Ticket WPF App — C# WPF desktop application for railway ticketing and seat reservation" class="action-icon-btn" title="Preview Screenshot" aria-label="Preview Rail Ticket"><i class="fa fa-eye"></i></a>
+                        <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.6s">
+                            <div class="portfolio-wrap">
+                                <div class="portfolio-img">
+                                    <img src="img/portfolio-6.jpg" alt="Rail Ticket WPF App screenshot">
+                                </div>
+                                <div class="portfolio-text">
+                                    <div class="portfolio-info">
+                                        <h3>Rail Ticket WPF App</h3>
+                                        <span class="portfolio-category">Desktop Application (.NET)</span>
+                                    </div>
+                                    <div class="portfolio-actions">
+                                        <a class="btn" href="img/portfolio-6.jpg" data-lightbox="portfolio" data-title="Rail Ticket WPF App — C# WPF desktop application for railway ticketing and seat reservation" title="Preview Screenshot" aria-label="Preview Rail Ticket WPF App"><i class="fa fa-eye"></i></a>
                                     </div>
                                 </div>
-                                <p class="project-desc">
-                                    Desktop enterprise software for railway seat reservation, route ticketing, and passenger itinerary administration.
-                                </p>
-                                <div class="project-tech-tags">
-                                    <span class="tech-tag">C# .NET</span>
-                                    <span class="tech-tag">WPF</span>
-                                    <span class="tech-tag">MSSQL</span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
-
-                <!-- 4. EXPERIENCE SECTION -->
-                <section id="experience" aria-label="Work Experience and Education">
-                    <div class="sawad-section-header">
-                        <div>
-                            <span class="section-tag">Career History</span>
-                            <h2>3+ YEARS OF <span class="accent-text">EXPERIENCE</span></h2>
-                        </div>
-                    </div>
-
-                    <div class="experience-list">
-                        <!-- Vogue Jewellers -->
-                        <div class="experience-card">
-                            <div class="exp-top-row">
-                                <div class="exp-role-group">
-                                    <h3 class="exp-role-title">Software Developer</h3>
-                                    <span class="exp-company">Vogue Jewellers (PVT) LTD.</span>
-                                </div>
-                                <span class="exp-date-pill">Mar 2025 - Present</span>
-                            </div>
-                            <p class="exp-desc">
-                                Spearheading internal system modernization, building resilient desktop & backend solutions, and integrating modern AI-assisted engineering with Google Antigravity and OpenAI Codex to accelerate deployment velocity and maintain strict code quality.
-                            </p>
-                            <div class="exp-skills-row">
-                                <span class="exp-skill-chip featured">AI Coding (Google Antigravity & Codex)</span>
-                                <span class="exp-skill-chip">.NET</span>
-                                <span class="exp-skill-chip">WinForms</span>
-                                <span class="exp-skill-chip">MSSQL</span>
-                                <span class="exp-skill-chip">C#</span>
-                                <span class="exp-skill-chip">Git & GitHub</span>
-                            </div>
-                        </div>
-
-                        <!-- Soft Gallery (Associate) -->
-                        <div class="experience-card">
-                            <div class="exp-top-row">
-                                <div class="exp-role-group">
-                                    <h3 class="exp-role-title">Associate Software Engineer</h3>
-                                    <span class="exp-company">Soft Gallery (PVT) LTD.</span>
-                                </div>
-                                <span class="exp-date-pill">May 2024 - Jan 2025</span>
-                            </div>
-                            <p class="exp-desc">
-                                Delivered commercial web applications and robust microservices. Collaborated with cross-functional teams in an Agile Scrum model to implement automated CI/CD pipelines and cloud deployments on AWS and Azure DevOps.
-                            </p>
-                            <div class="exp-skills-row">
-                                <span class="exp-skill-chip">Angular</span>
-                                <span class="exp-skill-chip">.NET Core Web API</span>
-                                <span class="exp-skill-chip">Windows Forms</span>
-                                <span class="exp-skill-chip">AWS</span>
-                                <span class="exp-skill-chip">Azure DevOps</span>
-                                <span class="exp-skill-chip">MSSQL</span>
-                                <span class="exp-skill-chip">CI/CD</span>
-                            </div>
-                        </div>
-
-                        <!-- Soft Gallery (Intern) -->
-                        <div class="experience-card">
-                            <div class="exp-top-row">
-                                <div class="exp-role-group">
-                                    <h3 class="exp-role-title">Software Engineer Intern</h3>
-                                    <span class="exp-company">Soft Gallery (PVT) LTD.</span>
-                                </div>
-                                <span class="exp-date-pill">Oct 2023 - Apr 2024</span>
-                            </div>
-                            <p class="exp-desc">
-                                Developed responsive frontend interfaces in Angular, built RESTful .NET APIs, authored comprehensive unit test suites, and managed PostgreSQL databases within cloud environments.
-                            </p>
-                            <div class="exp-skills-row">
-                                <span class="exp-skill-chip">Angular</span>
-                                <span class="exp-skill-chip">.NET Core MVC</span>
-                                <span class="exp-skill-chip">Unit Testing</span>
-                                <span class="exp-skill-chip">PostgreSQL</span>
-                                <span class="exp-skill-chip">Agile</span>
-                            </div>
-                        </div>
-
-                        <!-- SriLankan Airlines -->
-                        <div class="experience-card">
-                            <div class="exp-top-row">
-                                <div class="exp-role-group">
-                                    <h3 class="exp-role-title">Systems Engineer Intern</h3>
-                                    <span class="exp-company">SriLankan Airlines</span>
-                                </div>
-                                <span class="exp-date-pill">Apr 2022 - Jul 2022</span>
-                            </div>
-                            <p class="exp-desc">
-                                Administered enterprise virtualization on VMware ESXi, managed corporate routing, switches, and firewalls, and monitored mission-critical infrastructure with PRTG telemetry.
-                            </p>
-                            <div class="exp-skills-row">
-                                <span class="exp-skill-chip">VMware ESXi</span>
-                                <span class="exp-skill-chip">VMware ThinApp</span>
-                                <span class="exp-skill-chip">Routing & Switching</span>
-                                <span class="exp-skill-chip">Firewalls</span>
-                                <span class="exp-skill-chip">PRTG Monitoring</span>
-                            </div>
-                        </div>
-
-                        <!-- University of Ruhuna -->
-                        <div class="experience-card">
-                            <div class="exp-top-row">
-                                <div class="exp-role-group">
-                                    <h3 class="exp-role-title">Engineering Graduate (B.Sc Hons)</h3>
-                                    <span class="exp-company">Faculty of Engineering, University of Ruhuna, Sri Lanka</span>
-                                </div>
-                                <span class="exp-date-pill">Jan 2019 - Feb 2024</span>
-                            </div>
-                            <p class="exp-desc">
-                                Completed B.Sc (Hons) in Electrical and Information Engineering Degree Programme with Second Class Upper Division honors. Overall GPA: 3.63 / 4.00.
-                            </p>
-                            <div class="exp-skills-row">
-                                <span class="exp-skill-chip featured">Overall GPA: 3.63 / 4.00</span>
-                                <span class="exp-skill-chip">Computer Networks</span>
-                                <span class="exp-skill-chip">Software Engineering</span>
-                                <span class="exp-skill-chip">Second Upper Class</span>
                             </div>
                         </div>
                     </div>
-                </section>
-
-                <!-- 5. PREMIUM TOOLS SECTION -->
-                <section id="tools" aria-label="Premium Tools & Tech Stack">
-                    <div class="sawad-section-header">
-                        <div>
-                            <span class="section-tag">Tech Stack</span>
-                            <h2>PREMIUM <span class="accent-text">TOOLS</span></h2>
-                        </div>
-                    </div>
-
-                    <div class="tools-grid">
-                        <div class="tool-card">
-                            <div class="tool-icon-box"><i class="fas fa-robot"></i></div>
-                            <div class="tool-info">
-                                <h3>Google Antigravity</h3>
-                                <p>Agentic AI Coding IDE</p>
-                            </div>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon-box"><i class="fas fa-brain"></i></div>
-                            <div class="tool-info">
-                                <h3>OpenAI Codex & LLMs</h3>
-                                <p>AI Code Synthesis & Automation</p>
-                            </div>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon-box"><i class="fab fa-angular"></i></div>
-                            <div class="tool-info">
-                                <h3>Angular & TypeScript</h3>
-                                <p>Modern Frontend Framework</p>
-                            </div>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon-box"><i class="fab fa-microsoft"></i></div>
-                            <div class="tool-info">
-                                <h3>.NET Core & C#</h3>
-                                <p>Enterprise Backend & APIs</p>
-                            </div>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon-box"><i class="fab fa-aws"></i></div>
-                            <div class="tool-info">
-                                <h3>AWS Cloud</h3>
-                                <p>Cloud Infrastructure & Services</p>
-                            </div>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon-box"><i class="fas fa-database"></i></div>
-                            <div class="tool-info">
-                                <h3>Supabase</h3>
-                                <p>Real-time DB & Cloud Auth</p>
-                            </div>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-info-box"><i class="fab fa-docker"></i></div>
-                            <div class="tool-info">
-                                <h3>Azure DevOps & Docker</h3>
-                                <p>CI/CD & Containerization</p>
-                            </div>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-info-box"><i class="fas fa-server"></i></div>
-                            <div class="tool-info">
-                                <h3>MSSQL & PostgreSQL</h3>
-                                <p>Relational Databases</p>
-                            </div>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-icon-box"><i class="fas fa-network-wired"></i></div>
-                            <div class="tool-info">
-                                <h3>VMware ESXi & PRTG</h3>
-                                <p>Virtualization & Telemetry</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 6. ARTICLES & PAPERS (THOUGHTS) SECTION -->
-                <section id="thoughts" aria-label="Articles and Research Papers">
-                    <div class="sawad-section-header">
-                        <div>
-                            <span class="section-tag">Publications</span>
-                            <h2>ARTICLES & <span class="accent-text">PAPERS</span></h2>
-                        </div>
-                    </div>
-
-                    <div class="articles-grid">
-                        <!-- Paper 1 -->
-                        <article class="article-card">
-                            <div class="article-img-wrap">
-                                <img src="img/blog-1.jpg" alt="Enhancing MPTCP via WiFi and LTE Integration paper cover">
-                            </div>
-                            <div class="article-content">
-                                <div class="article-meta">
-                                    <span><i class="far fa-calendar-alt"></i> 02-Oct-2023</span>
-                                    <span><i class="far fa-file-alt"></i> Research Paper</span>
-                                </div>
-                                <h3 class="article-title">
-                                    Enhancing MPTCP via WiFi and LTE Integration: A Faster Internet Path with Reduced Latency
-                                </h3>
-                                <p class="article-desc">
-                                    Proposes RaC, an innovative Multipath TCP scheduler algorithm that simultaneously harnesses WiFi and LTE paths to achieve higher upload throughput and lower packet latency.
-                                </p>
-                                <a href="https://drive.google.com/file/d/1Idhlu-bv-VBa3FXTEyEoVFvH9Ey0n5yb/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="article-read-btn">
-                                    Read Paper <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </article>
-
-                        <!-- Paper 2 -->
-                        <article class="article-card">
-                            <div class="article-img-wrap">
-                                <img src="img/blog-2.jpg" alt="5G IoT Security Challenges paper cover">
-                            </div>
-                            <div class="article-content">
-                                <div class="article-meta">
-                                    <span><i class="far fa-calendar-alt"></i> 05-Jan-2023</span>
-                                    <span><i class="far fa-file-alt"></i> Research Paper</span>
-                                </div>
-                                <h3 class="article-title">
-                                    The Security Challenges of 5G Enabled IoT
-                                </h3>
-                                <p class="article-desc">
-                                    An in-depth analysis of vulnerabilities spanning eight distinct architectural layers of 5G-IoT systems, proposing defense-in-depth security mitigations for connected networks.
-                                </p>
-                                <a href="https://drive.google.com/file/d/14a25kfjMJtz-G8m5NAfATQC6y0V8dhvT/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="article-read-btn">
-                                    Read Paper <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </article>
-                    </div>
-                </section>
-
-                <!-- 7. CONTACT / LET'S WORK TOGETHER SECTION -->
-                <section id="contact" aria-label="Contact Section">
-                    <div class="sawad-section-header">
-                        <div>
-                            <span class="section-tag">Let's Connect</span>
-                            <h2>LET'S WORK <span class="accent-text">TOGETHER</span></h2>
-                        </div>
-                    </div>
-
-                    <div class="contact-card">
-                        <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                            <div class="contact-form-grid">
-                                <div class="form-group-sawad">
-                                    <label for="name" class="form-label-sawad">Your Name</label>
-                                    <input type="text" class="form-input-sawad" id="name" placeholder="John Doe" required="required" data-validation-required-message="Please enter your name" />
-                                </div>
-                                <div class="form-group-sawad">
-                                    <label for="email" class="form-label-sawad">Your Email</label>
-                                    <input type="email" class="form-input-sawad" id="email" placeholder="john@example.com" required="required" data-validation-required-message="Please enter your email" />
-                                </div>
-                                <div class="form-group-sawad contact-field-full">
-                                    <label for="subject" class="form-label-sawad">Subject or Project Scope</label>
-                                    <input type="text" class="form-input-sawad" id="subject" placeholder="Project Inquiry / Job Opportunity" required="required" data-validation-required-message="Please enter a subject" />
-                                </div>
-                                <div class="form-group-sawad contact-field-full">
-                                    <label for="message" class="form-label-sawad">Message</label>
-                                    <textarea class="form-input-sawad" id="message" placeholder="Tell me about your project, timeline, or engineering goals..." required="required" data-validation-required-message="Please enter your message"></textarea>
-                                </div>
-                            </div>
-                            <button class="btn-lime contact-submit-btn" type="submit" id="sendMessageButton">
-                                <i class="far fa-paper-plane"></i> Send Message
-                            </button>
-                        </form>
-
-                        <!-- Quick Contact Pills -->
-                        <div class="contact-info-cards">
-                            <a href="mailto:layanmoyura@gmail.com" class="contact-quick-pill">
-                                <i class="far fa-envelope"></i>
-                                <div class="pill-text">
-                                    <span class="label">Email Me</span>
-                                    <span class="val">layanmoyura@gmail.com</span>
-                                </div>
-                            </a>
-                            <a href="tel:+94764084832" class="contact-quick-pill">
-                                <i class="fas fa-phone-alt"></i>
-                                <div class="pill-text">
-                                    <span class="label">Call Me</span>
-                                    <span class="val">(+94) 76 408 4832</span>
-                                </div>
-                            </a>
-                            <div class="contact-quick-pill">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div class="pill-text">
-                                    <span class="label">Location</span>
-                                    <span class="val">Wadduwa, Sri Lanka</span>
+                </div>
+            </section>
+            <!-- Portfolio End -->
+            
+            <!-- Contact Start -->
+            <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+                <div class="container">
+                    <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                        <p>Get In Touch</p>
+                        <h2 id="contact-heading">Contact Me</h2>
+                    </header>
+                </div>
+                <div class="contact wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="container-fluid">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-8">
+                                    <div class="contact-form">
+                                        <div id="success"></div>
+                                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                                            <div class="control-group">
+                                                <input type="text" class="form-control" id="name" placeholder="Your Name" required="required" aria-label="Your Name" data-validation-required-message="Please enter your name" />
+                                                <p class="help-block"></p>
+                                            </div>
+                                            <div class="control-group">
+                                                <input type="email" class="form-control" id="email" placeholder="Your Email" required="required" aria-label="Your Email" data-validation-required-message="Please enter your email" />
+                                                <p class="help-block"></p>
+                                            </div>
+                                            <div class="control-group">
+                                                <input type="text" class="form-control" id="subject" placeholder="Subject" required="required" aria-label="Subject" data-validation-required-message="Please enter a subject" />
+                                                <p class="help-block"></p>
+                                            </div>
+                                            <div class="control-group">
+                                                <textarea class="form-control" id="message" placeholder="Message" required="required" aria-label="Message" data-validation-required-message="Please enter your message"></textarea>
+                                                <p class="help-block"></p>
+                                            </div>
+                                            <div>
+                                                <button class="btn" type="submit" id="sendMessageButton"><i class="far fa-paper-plane mr-2"></i>Send Message</button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
+            <!-- Contact End -->
 
-                <!-- FOOTER -->
-                <footer class="sawad-footer" role="contentinfo">
-                    <p>&copy; 2026 <a href="#hero">Layan Moyura</a>. All Rights Reserved.</p>
-                    <p>Designed in the aesthetic of <span class="accent-text">Sawad</span> • Built for High Performance</p>
-                </footer>
+            <!-- Blog Start -->
+            <section class="blog" id="blog" aria-labelledby="blog-heading">
+                <div class="container">
+                    <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                        <p>From Blog</p>
+                        <h2 id="blog-heading">Articles & Papers</h2>
+                    </header>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <article class="blog-item wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="blog-img">
+                                    <img src="img/blog-1.jpg" alt="Enhancing MPTCP — Research paper cover">
+                                </div>
+                                <div class="blog-text">
+                                    <h3 style="text-align: justify; font-size: 22px; font-weight: 600;">
+                                        Enhancing MPTCP via WiFi and LTE Integration: A Faster Internet Path with Reduced Latency.
+                                    </h3>
+                                    <div class="blog-meta">
+                                        <p><i class="far fa-user"></i>Group</p>
+                                        <p><i class="far fa-list-alt"></i>Final Year Research Paper</p>
+                                        <p><i class="far fa-calendar-alt"></i><time datetime="2023-10-02">02-Oct-2023</time></p>
+                                    </div>
+                                    <p style="text-align: justify;">
+                                        This paper proposes RaC, enhancing Multipath TCP for improved bandwidth and latency using a novel algorithm. Numerical results demonstrate RaC's superiority in upload speed and latency, with comparable download speed compared to other MPTCP schedulers.
+                                    </p>
+                                    <a class="btn" href="https://drive.google.com/file/d/1Idhlu-bv-VBa3FXTEyEoVFvH9Ey0n5yb/view?usp=sharing" target="_blank" rel="noopener noreferrer">Read More <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-lg-6">
+                            <article class="blog-item wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="blog-img">
+                                    <img src="img/blog-2.jpg" alt="5G IoT Security — Research paper cover">
+                                </div>
+                                <div class="blog-text">
+                                    <h3 style="text-align: justify; font-size: 22px; font-weight: 600;">The Security Challenges of 5G Enabled IoT</h3>
+                                    <div class="blog-meta">
+                                        <p><i class="far fa-user"></i>Individual</p>
+                                        <p><i class="far fa-list-alt"></i>Research Paper</p>
+                                        <p><i class="far fa-calendar-alt"></i><time datetime="2023-01-05">05-Jan-2023</time></p>
+                                    </div>
+                                    <p style="text-align: justify;">
+                                        The paper outlines security challenges in 5G-enabled IoT, discussing the evolution to 5G, emphasizing the importance of IoT security, and proposing measures for protection across eight layers of the 5G-IoT architecture.
+                                    </p>
+                                    <a class="btn" href="https://drive.google.com/file/d/14a25kfjMJtz-G8m5NAfATQC6y0V8dhvT/view?usp=sharing" target="_blank" rel="noopener noreferrer">Read More <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Blog End -->
+        </main>
+        <!-- Main Content Area End -->
 
-            </main>
+        <!-- Footer Start -->
+        <footer class="footer wow fadeIn" data-wow-delay="0.3s" id="footer" role="contentinfo">
+            <div class="container-fluid">
+                <div class="container">
+                    <address class="footer-info">
+                        <h2>Layan Moyura</h2>
+                        <h3>No.65, Pushparama Rd, Pothupitiya, Wadduwa</h3>
+                        <div class="footer-menu">
+                            <p><a href="tel:+94764084832" style="color: #ffffff;">(+94)-764084832</a></p>
+                            <p><a href="mailto:layanmoyura@gmail.com" style="color: #ffffff;">layanmoyura@gmail.com</a></p>
+                        </div>
+                        <div class="footer-social">
+                            <a href="https://linkedin.com/in/layanmoyura" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/layanmoyura" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
+                            <a href="https://www.hackerearth.com/@layan_moyura" target="_blank" rel="noopener noreferrer" aria-label="HackerRank profile"><i class="fab fa-hackerrank"></i></a>
+                            <a href="https://twitter.com/LayanMoyura" target="_blank" rel="noopener noreferrer" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
+                            <a href="https://web.facebook.com/layanmoyura/" target="_blank" rel="noopener noreferrer" aria-label="Facebook profile"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </address>
+                </div>
+                <div class="container copyright">
+                    <p>&copy; <time datetime="2026">2026</time> <a href="#home">PortFolio</a>, All Rights Reserved | Designed By <a href="https://layanmoyura.github.io/portfolio-site/">Layan Moyura</a></p>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
+        
+        <!-- Back to top button -->
+        <a href="#" class="btn back-to-top" aria-label="Back to top of page"><i class="fa fa-chevron-up"></i></a>
+        
+        <!-- Pre Loader -->
+        <div id="loader" class="show">
+            <div class="loader"></div>
         </div>
-
-        <!-- Back to Top Button -->
-        <a href="#hero" class="back-to-top" aria-label="Back to top of page"><i class="fas fa-chevron-up"></i></a>
 
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
         <script defer src="lib/easing/easing.min.js"></script>
         <script defer src="lib/wow/wow.min.js"></script>
+        <script defer src="lib/waypoints/waypoints.min.js"></script>
         <script defer src="lib/typed/typed.min.js"></script>
+        <script defer src="lib/owlcarousel/owl.carousel.min.js"></script>
         <script defer src="lib/isotope/isotope.pkgd.min.js"></script>
         <script defer src="lib/lightbox/js/lightbox.min.js"></script>
         
@@ -744,7 +690,6 @@
         <!-- Template Javascript -->
         <script defer src="js/main.js"></script>
 
-        <!-- Google Tag Manager -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-WSLEYG0B9F"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
