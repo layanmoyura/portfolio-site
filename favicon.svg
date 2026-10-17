@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Ambient Radial Glow matching Sawad Framer Obsidian -->
+    <radialGradient id="bg-glow" cx="50%" cy="32%" r="72%">
+      <stop offset="0%" stop-color="#233611" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#161514" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#0c0b0b" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Electric Lime Neon Gradient (#c5ff41) -->
+    <linearGradient id="lime-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faff94"/>
+      <stop offset="45%" stop-color="#c5ff41"/>
+      <stop offset="100%" stop-color="#8ce607"/>
+    </linearGradient>
+
+    <!-- Titanium Platinum White Gradient -->
+    <linearGradient id="white-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="65%" stop-color="#f2f5f8"/>
+      <stop offset="100%" stop-color="#d4dbe4"/>
+    </linearGradient>
+
+    <!-- Precision Glassmorphic Specular Rim -->
+    <linearGradient id="rim-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c5ff41" stop-opacity="0.95"/>
+      <stop offset="30%" stop-color="#ffffff" stop-opacity="0.32"/>
+      <stop offset="70%" stop-color="rgba(255,255,255,0.06)"/>
+      <stop offset="100%" stop-color="#c5ff41" stop-opacity="0.45"/>
+    </linearGradient>
+
+    <!-- Balanced Dual-Layer Drop Shadow & Neon Aura -->
+    <filter id="neon-shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.8"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="22" flood-color="#c5ff41" flood-opacity="0.32"/>
+    </filter>
+  </defs>
+
+  <!-- Base Obsidian Squircle -->
+  <rect x="22" y="22" width="468" height="468" rx="124" fill="url(#bg-glow)" />
+  <rect x="22" y="22" width="468" height="468" rx="124" fill="none" stroke="url(#rim-grad)" stroke-width="8" />
+
+  <!-- The Master Monogram Mark -->
+  <g filter="url(#neon-shadow)">
+    <!-- Letter L: Electric Lime with Chamfered Tech Edge -->
+    <path d="M 86 156 L 106 136 L 148 136 L 148 316 L 220 316 L 220 376 L 86 376 Z"
+          fill="url(#lime-grad)" />
+
+    <!-- Letter M: Symmetrically Chamfered Tech Facet in Pure Platinum White -->
+    <path d="M 242 136 L 298 136 L 334 246 L 370 136 L 406 136 L 426 156 L 426 376 L 374 376 L 374 234 L 348 312 L 320 312 L 294 234 L 294 376 L 242 376 Z"
+          fill="url(#white-grad)" />
+  </g>
+
+  <!-- Live Pulse Status Dot in Top Right (Available for Work Signature) -->
+  <circle cx="426" cy="84" r="16" fill="url(#lime-grad)" />
+  <circle cx="426" cy="84" r="8" fill="#ffffff" />
+</svg>
