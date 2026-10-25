@@ -19,7 +19,7 @@
         <link rel="icon" type="image/x-icon" href="favicon.ico">
         <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
         <link rel="manifest" href="site.webmanifest">
-        <meta name="theme-color" content="#151312">
+        <meta name="theme-color" content="#0c0809">
 
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website">
@@ -84,14 +84,53 @@
         <!-- Sawad Framer Design System Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
     </head>
-    <body>
+    <body class="berserk-mode">
+        <!-- Berserk Global SVG Symbols (Brand of Sacrifice & Dragon Slayer) -->
+        <svg xmlns="http://www.w3.org/2000/svg" style="display:none;" aria-hidden="true">
+            <defs>
+                <g id="brand-path" fill="currentColor">
+                    <!-- Central vertical stake -->
+                    <polygon points="147,24 153,24 153,370 150,395 147,370" />
+                    <!-- Left upper horn & loop -->
+                    <path d="M 150,42 C 128,46 105,65 86,95 C 80,135 88,175 105,205 C 130,225 147,233 147,233 L 147,218 C 125,208 106,188 96,160 C 96,130 104,100 120,78 C 138,65 150,60 150,60 Z" />
+                    <!-- Right upper horn & loop -->
+                    <path d="M 150,42 C 172,46 195,65 214,95 C 220,135 212,175 195,205 C 170,225 153,233 153,233 L 153,218 C 175,208 194,188 204,160 C 204,130 196,100 180,78 C 162,65 150,60 150,60 Z" />
+                    <!-- Left outer hook -->
+                    <polygon points="82,140 45,95 85,115 88,145" />
+                    <!-- Right outer hook -->
+                    <polygon points="218,140 255,95 215,115 212,145" />
+                    <!-- Diagonal crossing bars -->
+                    <polygon points="112,84 124,72 218,286 206,298" />
+                    <polygon points="188,84 176,72 82,286 94,298" />
+                    <!-- Lower arrow barbs -->
+                    <polygon points="82,286 40,360 122,310" />
+                    <polygon points="218,286 260,360 178,310" />
+                </g>
+                <g id="sword-path" fill="currentColor">
+                    <!-- Dragon Slayer: pommel, grip, crossguard, massive raw iron blade -->
+                    <circle cx="50" cy="282" r="7" />
+                    <rect x="46" y="240" width="8" height="36" />
+                    <rect x="24" y="234" width="52" height="7" rx="1" />
+                    <polygon points="30,234 30,48 50,16 70,48 70,234" />
+                </g>
+            </defs>
+        </svg>
+
         <!-- Accessibility Skip Link -->
         <a class="skip-link" href="#hero">Skip to main content</a>
 
-        <!-- Preloader -->
-        <div id="loader" class="show">
-            <div class="loader"></div>
+        <!-- Preloader (Brand of Sacrifice) -->
+        <div id="loader" class="show" aria-label="Loading portfolio">
+            <div class="berserk-loader-wrap">
+                <svg class="berserk-loader-brand" viewBox="0 0 300 420" aria-hidden="true">
+                    <use href="#brand-path"></use>
+                </svg>
+                <span class="loader-brand-title">The Code Struggler</span>
+            </div>
         </div>
+
+        <!-- Ambient Embers Canvas (Active in Berserk Mode) -->
+        <canvas id="berserk-canvas" class="berserk-canvas" aria-hidden="true"></canvas>
 
         <!-- Sawad Two-Column Bento Grid Wrapper -->
         <div class="sawad-wrapper">
@@ -99,9 +138,20 @@
             <!-- LEFT COLUMN: STICKY PROFILE SIDEBAR -->
             <aside class="sidebar-wrapper" aria-label="Profile and Identity">
                 <div class="profile-card">
-                    <!-- Available Status Pill -->
-                    <div class="status-badge">
-                        <span class="status-dot"></span> Available for work
+                    <!-- Berserk Brand Background Watermark -->
+                    <div class="profile-brand-watermark" aria-hidden="true">
+                        <svg viewBox="0 0 300 420"><use href="#brand-path"></use></svg>
+                    </div>
+
+                    <!-- Available Status Pill & Struggler Crest -->
+                    <div class="sidebar-badge-group">
+                        <div class="status-badge">
+                            <span class="status-dot"></span> Available for work
+                        </div>
+                        <div class="struggler-pill" title="Mark of the Struggler — Code Forged in Battle">
+                            <svg class="struggler-pill-brand" viewBox="0 0 300 420" aria-hidden="true"><use href="#brand-path"></use></svg>
+                            <span>Struggler</span>
+                        </div>
                     </div>
 
                     <!-- Profile Photo with Rounded Frame -->
@@ -114,7 +164,7 @@
                     <div class="profile-role">Full Stack & AI Engineer</div>
                     
                     <p class="profile-bio">
-                        A Software Engineer with 3+ years experience who develops innovative, scalable solutions across web, cloud, and modern AI coding environments.
+                        A Software Engineer with 3+ years experience who develops innovative, scalable solutions across web, cloud, and modern AI coding environments. Enduring complex engineering challenges with the resolve of the Struggler.
                     </p>
 
                     <!-- Social Channels -->
@@ -152,13 +202,23 @@
                         <a href="#tools" class="dock-link">Tools</a>
                         <a href="#thoughts" class="dock-link">Thoughts</a>
                         <a href="#contact" class="dock-link">Contact</a>
+                        <div class="dock-divider" aria-hidden="true"></div>
+                        <button type="button" class="dock-berserk-btn active" id="berserk-toggle" aria-label="Toggle Berserk Theme" title="Toggle Berserk Theme" aria-pressed="true">
+                            <svg class="dock-brand-icon" viewBox="0 0 300 420" aria-hidden="true"><use href="#brand-path"></use></svg>
+                            <span class="dock-berserk-text">Berserk</span>
+                        </button>
                     </nav>
                 </div>
 
                 <!-- 1. HERO SECTION -->
                 <section class="hero-card" id="hero" aria-label="Hero Section">
+                    <!-- Hero Brand Watermark -->
+                    <div class="hero-brand-watermark" aria-hidden="true">
+                        <svg viewBox="0 0 300 420"><use href="#brand-path"></use></svg>
+                    </div>
+
                     <div class="hero-intro-pill">
-                        <span class="dot"></span> Software Engineer • 3+ Years Exp
+                        <span class="dot"></span> Software Engineer • 3+ Years Exp • Defying Causality
                     </div>
 
                     <h1 class="hero-giant-title">
@@ -173,7 +233,7 @@
                     <div class="typed-wrapper">
                         <i class="fas fa-terminal"></i>
                         <span class="typed-text-target"></span>
-                        <span class="typed-source" style="display:none;">Full Stack Software Engineer, AI Coding Specialist (Google Antigravity & OpenAI Codex), Cloud & DevOps Engineer</span>
+                        <span class="typed-source" style="display:none;">Full Stack Software Engineer, AI Coding Specialist (Google Antigravity & OpenAI Codex), Cloud & DevOps Architect, The Code Struggler — Defying Causality</span>
                     </div>
 
                     <!-- Stats Row (Bento Grid) -->
@@ -188,7 +248,7 @@
                         </div>
                         <div class="stat-card">
                             <div class="stat-num">100%</div>
-                            <p class="stat-label">CODE QUALITY<br>& RESILIENCE</p>
+                            <p class="stat-label">CODE RESILIENCE<br>& BATTLE-READY</p>
                         </div>
                     </div>
                 </section>
@@ -197,20 +257,28 @@
                 <div class="marquee-container" aria-hidden="true">
                     <div class="marquee-track">
                         <div class="marquee-content">
-                            <span class="marquee-item"><span class="marquee-dot"></span> AI CODING (GOOGLE ANTIGRAVITY & CODEX)</span>
-                            <span class="marquee-item"><span class="marquee-dot"></span> FULL STACK WEB DEVELOPMENT</span>
-                            <span class="marquee-item"><span class="marquee-dot"></span> CLOUD ARCHITECTURE (AWS & SUPABASE)</span>
-                            <span class="marquee-item"><span class="marquee-dot"></span> DEVOPS & CI/CD AUTOMATION</span>
-                            <span class="marquee-item"><span class="marquee-dot"></span> ANGULAR & .NET CORE</span>
-                            <span class="marquee-item"><span class="marquee-dot"></span> SYSTEM MODERNIZATION</span>
+                            <span class="marquee-item"><span class="marquee-dot brand-dot"></span> AI CODING (GOOGLE ANTIGRAVITY & CODEX)</span>
+                            <span class="marquee-item berserk-marquee"><span class="marquee-dot brand-dot"></span> ⚔️ STRUGGLE • ENDURE • PREVAIL</span>
+                            <span class="marquee-item"><span class="marquee-dot brand-dot"></span> FULL STACK WEB DEVELOPMENT</span>
+                            <span class="marquee-item berserk-marquee"><span class="marquee-dot brand-dot"></span> 🩸 BRAND OF THE STRUGGLER</span>
+                            <span class="marquee-item"><span class="marquee-dot brand-dot"></span> CLOUD ARCHITECTURE (AWS & SUPABASE)</span>
+                            <span class="marquee-item berserk-marquee"><span class="marquee-dot brand-dot"></span> 🗡️ FORGED LIKE THE DRAGON SLAYER</span>
+                            <span class="marquee-item"><span class="marquee-dot brand-dot"></span> DEVOPS & CI/CD AUTOMATION</span>
+                            <span class="marquee-item berserk-marquee"><span class="marquee-dot brand-dot"></span> 🛡️ DEFIER OF CAUSALITY</span>
+                            <span class="marquee-item"><span class="marquee-dot brand-dot"></span> ANGULAR & .NET CORE</span>
+                            <span class="marquee-item"><span class="marquee-dot brand-dot"></span> SYSTEM MODERNIZATION</span>
                         </div>
                         <div class="marquee-content">
-                            <span class="marquee-item"><span class="marquee-dot"></span> AI CODING (GOOGLE ANTIGRAVITY & CODEX)</span>
-                            <span class="marquee-item"><span class="marquee-dot"></span> FULL STACK WEB DEVELOPMENT</span>
-                            <span class="marquee-item"><span class="marquee-dot"></span> CLOUD ARCHITECTURE (AWS & SUPABASE)</span>
-                            <span class="marquee-item"><span class="marquee-dot"></span> DEVOPS & CI/CD AUTOMATION</span>
-                            <span class="marquee-item"><span class="marquee-dot"></span> ANGULAR & .NET CORE</span>
-                            <span class="marquee-item"><span class="marquee-dot"></span> SYSTEM MODERNIZATION</span>
+                            <span class="marquee-item"><span class="marquee-dot brand-dot"></span> AI CODING (GOOGLE ANTIGRAVITY & CODEX)</span>
+                            <span class="marquee-item berserk-marquee"><span class="marquee-dot brand-dot"></span> ⚔️ STRUGGLE • ENDURE • PREVAIL</span>
+                            <span class="marquee-item"><span class="marquee-dot brand-dot"></span> FULL STACK WEB DEVELOPMENT</span>
+                            <span class="marquee-item berserk-marquee"><span class="marquee-dot brand-dot"></span> 🩸 BRAND OF THE STRUGGLER</span>
+                            <span class="marquee-item"><span class="marquee-dot brand-dot"></span> CLOUD ARCHITECTURE (AWS & SUPABASE)</span>
+                            <span class="marquee-item berserk-marquee"><span class="marquee-dot brand-dot"></span> 🗡️ FORGED LIKE THE DRAGON SLAYER</span>
+                            <span class="marquee-item"><span class="marquee-dot brand-dot"></span> DEVOPS & CI/CD AUTOMATION</span>
+                            <span class="marquee-item berserk-marquee"><span class="marquee-dot brand-dot"></span> 🛡️ DEFIER OF CAUSALITY</span>
+                            <span class="marquee-item"><span class="marquee-dot brand-dot"></span> ANGULAR & .NET CORE</span>
+                            <span class="marquee-item"><span class="marquee-dot brand-dot"></span> SYSTEM MODERNIZATION</span>
                         </div>
                     </div>
                 </div>
@@ -219,7 +287,7 @@
                 <section id="projects" aria-label="Recent Projects">
                     <div class="sawad-section-header">
                         <div>
-                            <span class="section-tag">Portfolio</span>
+                            <span class="section-tag"><i class="fas fa-shield-alt"></i> Battle-Tested Artifacts</span>
                             <h2>RECENT <span class="accent-text">PROJECTS</span></h2>
                         </div>
                     </div>
@@ -254,6 +322,7 @@
                                     A unified personal ERP connecting multi-currency finances, physical movement, and daily operations. Powered by Google Gemini Flash AI for natural language transaction logging, hands-free voice typing across 17+ languages, defense-in-depth prompt guard security, Haversine GPS commute tracking, and Supabase cloud sync.
                                 </p>
                                 <div class="project-tech-tags">
+                                    <span class="tech-tag berserk-tag"><i class="fas fa-fire-alt"></i> Guts-Grade Resilience</span>
                                     <span class="tech-tag">Google Gemini Flash</span>
                                     <span class="tech-tag">Voice STT (17+ Languages)</span>
                                     <span class="tech-tag">Prompt Guard</span>
@@ -414,7 +483,7 @@
                 <section id="experience" aria-label="Work Experience and Education">
                     <div class="sawad-section-header">
                         <div>
-                            <span class="section-tag">Career History</span>
+                            <span class="section-tag"><i class="fas fa-scroll"></i> Chronicle of Trials</span>
                             <h2>3+ YEARS OF <span class="accent-text">EXPERIENCE</span></h2>
                         </div>
                     </div>
@@ -434,6 +503,7 @@
                             </p>
                             <div class="exp-skills-row">
                                 <span class="exp-skill-chip featured">AI Coding (Google Antigravity & Codex)</span>
+                                <span class="exp-skill-chip featured berserk-chip"><i class="fas fa-khanda"></i> Modernization Crusade</span>
                                 <span class="exp-skill-chip">.NET</span>
                                 <span class="exp-skill-chip">WinForms</span>
                                 <span class="exp-skill-chip">MSSQL</span>
@@ -533,7 +603,7 @@
                 <section id="tools" aria-label="Premium Tools & Tech Stack">
                     <div class="sawad-section-header">
                         <div>
-                            <span class="section-tag">Tech Stack</span>
+                            <span class="section-tag"><i class="fas fa-hammer"></i> Arsenal & Craft</span>
                             <h2>PREMIUM <span class="accent-text">TOOLS</span></h2>
                         </div>
                     </div>
@@ -603,13 +673,21 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Dragon Slayer Arsenal Motto -->
+                    <div class="berserk-tools-motto">
+                        <svg class="motto-sword-icon" viewBox="0 0 100 300" aria-hidden="true"><use href="#sword-path"></use></svg>
+                        <p class="motto-text">
+                            “It was too massive to be called a simple stack. Thick, resilient, and forged for heavy loads. Indeed, it was an engineering arsenal.”
+                        </p>
+                    </div>
                 </section>
 
                 <!-- 6. ARTICLES & PAPERS (THOUGHTS) SECTION -->
                 <section id="thoughts" aria-label="Articles and Research Papers">
                     <div class="sawad-section-header">
                         <div>
-                            <span class="section-tag">Publications</span>
+                            <span class="section-tag"><i class="fas fa-book-dead"></i> Scholarly Grimoires</span>
                             <h2>ARTICLES & <span class="accent-text">PAPERS</span></h2>
                         </div>
                     </div>
@@ -659,13 +737,26 @@
                             </div>
                         </article>
                     </div>
+
+                    <!-- Berserk Philosophy Card -->
+                    <div class="berserk-philosophy-card">
+                        <div class="philosophy-icon" aria-hidden="true">
+                            <svg class="philosophy-brand" viewBox="0 0 300 420"><use href="#brand-path"></use></svg>
+                        </div>
+                        <div class="philosophy-content">
+                            <blockquote class="berserk-quote">
+                                “In this world, is the destiny of software governed by some transcendental entity or law? ... Struggle, contend, wriggle. That alone is the sword of one who confronts the impossible.”
+                            </blockquote>
+                            <cite class="berserk-cite">— In the Spirit of Kentaro Miura’s <em>Berserk</em></cite>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- 7. CONTACT / LET'S WORK TOGETHER SECTION -->
                 <section id="contact" aria-label="Contact Section">
                     <div class="sawad-section-header">
                         <div>
-                            <span class="section-tag">Let's Connect</span>
+                            <span class="section-tag"><i class="fas fa-envelope-open-text"></i> Summon the Engineer</span>
                             <h2>LET'S WORK <span class="accent-text">TOGETHER</span></h2>
                         </div>
                     </div>
@@ -729,7 +820,11 @@
 
                 <!-- FOOTER -->
                 <footer class="sawad-footer" role="contentinfo">
-                    <p>&copy; 2026 <a href="#hero">Layan Moyura</a>. All Rights Reserved.</p>
+                    <div class="footer-brand-wrap" title="Never stop moving forward, Struggler.">
+                        <svg class="footer-brand-glyph" viewBox="0 0 300 420" aria-hidden="true"><use href="#brand-path"></use></svg>
+                    </div>
+                    <p>&copy; 2026 <a href="#hero">Layan Moyura</a>. Built with the discipline of the Struggler. All Rights Reserved.</p>
+                    <p class="footer-tribute">Tribute to Kentaro Miura (1966–2021) • Forged in Code • Keep moving forward, Struggler.</p>
                 </footer>
 
             </main>

@@ -1551,3 +1551,501 @@ textarea.form-input-sawad {
         padding: 28px 16px;
     }
 }
+
+
+/* ==========================================================================
+   BERSERK THEME EXTENSIONS (THE STRUGGLER / ECLIPSE AESTHETIC)
+   Crafted with respect for Kentaro Miura's masterpiece while maintaining
+   full UI usability, responsiveness, and professional structure.
+   ========================================================================== */
+
+/* Custom Selection */
+::selection {
+    background: #e6283b;
+    color: #ffffff;
+}
+::-moz-selection {
+    background: #e6283b;
+    color: #ffffff;
+}
+
+/* Dark Steel Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 9px;
+}
+::-webkit-scrollbar-track {
+    background: #110e0f;
+}
+::-webkit-scrollbar-thumb {
+    background: #2b2527;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-lime);
+}
+
+/* --------------------------------------------------------------------------
+   Berserk Mode Theme Overrides (Body .berserk-mode)
+   -------------------------------------------------------------------------- */
+body.berserk-mode {
+    --bg-main: #0c0809;
+    --bg-card: #161011;
+    --bg-card-hover: #221618;
+    --bg-card-subtle: #1c1315;
+    --bg-input: #0c0809;
+
+    --border-subtle: rgba(230, 40, 59, 0.14);
+    --border-light: rgba(230, 40, 59, 0.28);
+    --border-lime: rgba(230, 40, 59, 0.45);
+
+    --accent-lime: #e6283b;
+    --accent-lime-hover: #ff3b4e;
+    --accent-lime-muted: rgba(230, 40, 59, 0.18);
+    --accent-orange: #ff5035;
+
+    --text-primary: #f6eded;
+    --text-muted: #b09e9f;
+    --text-dim: #7a6e70;
+}
+
+/* Ethereal Eclipse Glow Backdrop in Berserk Mode */
+body.berserk-mode::before {
+    content: '';
+    position: fixed;
+    top: -180px;
+    right: -100px;
+    width: 620px;
+    height: 620px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(230, 40, 59, 0.14) 0%, rgba(201, 70, 50, 0.05) 45%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+body.berserk-mode .profile-card:hover,
+body.berserk-mode .hero-card:hover,
+body.berserk-mode .project-card:hover,
+body.berserk-mode .experience-card:hover,
+body.berserk-mode .tool-card:hover,
+body.berserk-mode .article-card:hover,
+body.berserk-mode .contact-card:hover {
+    box-shadow: 0 10px 32px rgba(230, 40, 59, 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   Preloader Brand of Sacrifice
+   -------------------------------------------------------------------------- */
+.berserk-loader-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+}
+
+.berserk-loader-brand {
+    width: 52px;
+    height: 72px;
+    color: var(--berserk-crimson);
+    animation: brandThrob 1.25s infinite ease-in-out;
+    filter: drop-shadow(0 0 12px rgba(230, 40, 59, 0.75));
+}
+
+.loader-brand-title {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.32em;
+    color: #ded1d2;
+    text-transform: uppercase;
+    animation: brandTitleGlow 1.25s infinite ease-in-out;
+}
+
+@keyframes brandThrob {
+    0%, 100% {
+        transform: scale(0.96);
+        filter: drop-shadow(0 0 8px rgba(230, 40, 59, 0.5));
+    }
+    50% {
+        transform: scale(1.07);
+        filter: drop-shadow(0 0 26px rgba(230, 40, 59, 0.95)) drop-shadow(0 0 45px rgba(255, 59, 78, 0.6));
+        color: #ff3b4e;
+    }
+}
+
+@keyframes brandTitleGlow {
+    0%, 100% { opacity: 0.65; }
+    50% { opacity: 1; color: #ffffff; text-shadow: 0 0 12px rgba(230, 40, 59, 0.7); }
+}
+
+/* --------------------------------------------------------------------------
+   Ambient Embers Canvas
+   -------------------------------------------------------------------------- */
+.berserk-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+body.berserk-mode .berserk-canvas {
+    opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Floating Navigation Dock Berserk Button
+   -------------------------------------------------------------------------- */
+.dock-divider {
+    width: 1px;
+    height: 18px;
+    background: var(--border-light);
+    margin: 0 4px;
+    flex-shrink: 0;
+}
+
+.dock-berserk-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-muted);
+    border-radius: var(--radius-full);
+    padding: 7px 14px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    font-family: var(--font-body);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.dock-berserk-btn:hover {
+    color: #ff3b4e;
+    background: rgba(230, 40, 59, 0.12);
+    border-color: rgba(230, 40, 59, 0.35);
+}
+
+.dock-brand-icon {
+    width: 13px;
+    height: 18px;
+    fill: currentColor;
+    transition: var(--transition-smooth);
+}
+
+.dock-berserk-btn.active {
+    background: #e6283b;
+    color: #ffffff;
+    border-color: #e6283b;
+    box-shadow: 0 0 16px rgba(230, 40, 59, 0.65);
+}
+
+.dock-berserk-btn.active .dock-brand-icon {
+    animation: brandMiniThrob 1.2s infinite ease-in-out;
+}
+
+@keyframes brandMiniThrob {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px #fff); }
+    50% { transform: scale(1.18); filter: drop-shadow(0 0 6px #fff); }
+}
+
+/* --------------------------------------------------------------------------
+   Profile Sidebar: Struggler Crest & Watermark
+   -------------------------------------------------------------------------- */
+.sidebar-badge-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sidebar-badge-group .status-badge {
+    margin-bottom: 0;
+}
+
+.struggler-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(230, 40, 59, 0.1);
+    border: 1px solid rgba(230, 40, 59, 0.32);
+    color: #ff4d61;
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: default;
+    transition: var(--transition-smooth);
+}
+
+.struggler-pill:hover {
+    background: rgba(230, 40, 59, 0.22);
+    box-shadow: 0 0 14px rgba(230, 40, 59, 0.45);
+    transform: translateY(-1px);
+}
+
+.struggler-pill-brand {
+    width: 10px;
+    height: 14px;
+    fill: currentColor;
+}
+
+.profile-brand-watermark {
+    position: absolute;
+    bottom: -30px;
+    right: -20px;
+    width: 155px;
+    height: 215px;
+    color: #ffffff;
+    opacity: 0.035;
+    pointer-events: none;
+    z-index: 0;
+    transition: var(--transition-smooth);
+}
+
+body.berserk-mode .profile-brand-watermark {
+    color: var(--berserk-crimson);
+    opacity: 0.12;
+    filter: drop-shadow(0 0 20px rgba(230, 40, 59, 0.4));
+}
+
+/* --------------------------------------------------------------------------
+   Hero Card: Watermark & Touches
+   -------------------------------------------------------------------------- */
+.hero-brand-watermark {
+    position: absolute;
+    top: -24px;
+    right: -20px;
+    width: 220px;
+    height: 308px;
+    color: #ffffff;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 0;
+    transition: var(--transition-smooth);
+}
+
+body.berserk-mode .hero-brand-watermark {
+    color: var(--berserk-crimson);
+    opacity: 0.12;
+    filter: drop-shadow(0 0 25px rgba(230, 40, 59, 0.4));
+}
+
+/* --------------------------------------------------------------------------
+   Marquee Berserk Styling
+   -------------------------------------------------------------------------- */
+.marquee-item.berserk-marquee {
+    color: var(--accent-orange);
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+body.berserk-mode .marquee-item.berserk-marquee {
+    color: #ff4a5c;
+    text-shadow: 0 0 10px rgba(230, 40, 59, 0.5);
+}
+
+.marquee-dot.brand-dot {
+    background: var(--accent-lime);
+}
+
+body.berserk-mode .marquee-dot.brand-dot {
+    background: #e6283b;
+    box-shadow: 0 0 8px #e6283b;
+}
+
+/* --------------------------------------------------------------------------
+   Chips & Badges (Projects & Experience)
+   -------------------------------------------------------------------------- */
+.tech-tag.berserk-tag {
+    background: rgba(230, 40, 59, 0.12);
+    border-color: rgba(230, 40, 59, 0.35);
+    color: #ff4d61;
+}
+
+.exp-skill-chip.berserk-chip {
+    background: rgba(230, 40, 59, 0.12);
+    border-color: rgba(230, 40, 59, 0.35);
+    color: #ff5265;
+}
+
+/* --------------------------------------------------------------------------
+   Dragon Slayer Arsenal Motto in Tools
+   -------------------------------------------------------------------------- */
+.berserk-tools-motto {
+    margin-top: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-left: 3px solid var(--accent-lime);
+    border-radius: var(--radius-md);
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: var(--transition-smooth);
+}
+
+body.berserk-mode .berserk-tools-motto {
+    border-left-color: var(--berserk-crimson);
+    background: linear-gradient(90deg, rgba(230, 40, 59, 0.08) 0%, var(--bg-card) 100%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.motto-sword-icon {
+    width: 22px;
+    height: 52px;
+    flex-shrink: 0;
+    color: var(--accent-lime);
+    transition: var(--transition-smooth);
+}
+
+body.berserk-mode .motto-sword-icon {
+    color: var(--berserk-crimson);
+    filter: drop-shadow(0 0 8px rgba(230, 40, 59, 0.65));
+}
+
+.motto-text {
+    margin: 0;
+    font-size: 0.92rem;
+    font-style: italic;
+    color: var(--text-muted);
+    line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   Berserk Philosophy Card in Thoughts
+   -------------------------------------------------------------------------- */
+.berserk-philosophy-card {
+    margin-top: 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 24px 26px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.berserk-philosophy-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--accent-lime);
+    transition: var(--transition-smooth);
+}
+
+body.berserk-mode .berserk-philosophy-card::before {
+    background: var(--berserk-crimson);
+    box-shadow: 0 0 12px rgba(230, 40, 59, 0.7);
+}
+
+.philosophy-icon {
+    width: 32px;
+    height: 45px;
+    flex-shrink: 0;
+    color: var(--accent-lime);
+    margin-top: 3px;
+    transition: var(--transition-smooth);
+}
+
+body.berserk-mode .philosophy-icon {
+    color: var(--berserk-crimson);
+    filter: drop-shadow(0 0 10px rgba(230, 40, 59, 0.7));
+}
+
+.philosophy-brand {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+
+.philosophy-content {
+    flex: 1;
+}
+
+.berserk-quote {
+    margin: 0 0 8px 0;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.berserk-cite {
+    font-size: 0.8rem;
+    color: var(--accent-orange);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    display: block;
+}
+
+body.berserk-mode .berserk-cite {
+    color: #ff5265;
+}
+
+/* --------------------------------------------------------------------------
+   Footer Brand Glyph & Tribute
+   -------------------------------------------------------------------------- */
+.footer-brand-wrap {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.footer-brand-glyph {
+    width: 24px;
+    height: 34px;
+    color: var(--text-dim);
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+.footer-brand-glyph:hover,
+body.berserk-mode .footer-brand-glyph {
+    color: var(--berserk-crimson);
+    filter: drop-shadow(0 0 12px rgba(230, 40, 59, 0.75));
+    transform: scale(1.15);
+}
+
+.footer-tribute {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    margin-top: 4px;
+    letter-spacing: 0.03em;
+}
+
+/* Mobile Adjustments for Berserk Additions */
+@media (max-width: 768px) {
+    .dock-berserk-text {
+        font-size: 0.78rem;
+    }
+    
+    .berserk-tools-motto {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .berserk-philosophy-card {
+        padding: 20px 18px;
+        gap: 14px;
+    }
+}

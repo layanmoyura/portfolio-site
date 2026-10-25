@@ -129,7 +129,8 @@
         var typedStrings = [
             "Full Stack Software Engineer",
             "AI Coding Specialist (Google Antigravity & OpenAI Codex)",
-            "Cloud & DevOps Architecture (.NET, Angular, AWS)"
+            "Cloud & DevOps Architecture (.NET, Angular, AWS)",
+            "The Code Struggler — Defying Causality"
         ];
 
         new Typed('.typed-text-target', {
@@ -180,6 +181,172 @@
             e.preventDefault();
             handleFilter($(this));
         }
+    });
+
+
+    // ==========================================================================
+    // 8. BERSERK THEME CONTROLLER & ECLIPSE EMBERS ENGINE
+    // ==========================================================================
+
+    // Metallic Sword Resonant Chime (Dragon Slayer Clang via Web Audio API)
+    var playDragonslayerClang = function () {
+        try {
+            var AudioContext = window.AudioContext || window.webkitAudioContext;
+            if (!AudioContext) return;
+            var ctx = new AudioContext();
+            if (ctx.state === 'suspended') {
+                ctx.resume();
+            }
+            var now = ctx.currentTime;
+
+            // Deep iron blade impact
+            var oscBass = ctx.createOscillator();
+            var gainBass = ctx.createGain();
+            oscBass.type = 'triangle';
+            oscBass.frequency.setValueAtTime(130, now);
+            oscBass.frequency.exponentialRampToValueAtTime(40, now + 0.45);
+            gainBass.gain.setValueAtTime(0.25, now);
+            gainBass.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+            oscBass.connect(gainBass);
+            gainBass.connect(ctx.destination);
+            oscBass.start(now);
+            oscBass.stop(now + 0.5);
+
+            // Shimmering high-frequency harmonics of heavy steel
+            var bladePitches = [680, 1140, 1850, 2900];
+            bladePitches.forEach(function (freq, i) {
+                var osc = ctx.createOscillator();
+                var gain = ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(freq, now);
+                var amp = 0.1 / (i + 1);
+                gain.gain.setValueAtTime(amp, now);
+                gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.7 + i * 0.15);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start(now);
+                osc.stop(now + 1.0);
+            });
+        } catch (e) {
+            // Audio policy / unavailable - fail silently
+        }
+    };
+
+    // Ambient Floating Crimson Embers (Canvas Engine)
+    var embersAnimationId = null;
+    var embersCanvas = document.getElementById('berserk-canvas');
+    var embersCtx = embersCanvas ? embersCanvas.getContext('2d') : null;
+    var emberParticles = [];
+
+    var resizeEmbers = function () {
+        if (!embersCanvas) return;
+        embersCanvas.width = window.innerWidth;
+        embersCanvas.height = window.innerHeight;
+    };
+
+    var createEmber = function (w, h, initial) {
+        return {
+            x: Math.random() * w,
+            y: initial ? Math.random() * h : h + Math.random() * 20,
+            radius: Math.random() * 2.2 + 0.8,
+            speedY: Math.random() * 0.9 + 0.4,
+            speedX: (Math.random() - 0.5) * 0.5,
+            opacity: Math.random() * 0.6 + 0.3,
+            fadeSpeed: Math.random() * 0.003 + 0.001,
+            sway: Math.random() * 2,
+            swaySpeed: Math.random() * 0.02 + 0.01
+        };
+    };
+
+    var updateAndDrawEmbers = function () {
+        if (!embersCtx || !embersCanvas) return;
+        var w = embersCanvas.width;
+        var h = embersCanvas.height;
+        embersCtx.clearRect(0, 0, w, h);
+
+        for (var i = 0; i < emberParticles.length; i++) {
+            var p = emberParticles[i];
+            p.y -= p.speedY;
+            p.sway += p.swaySpeed;
+            p.x += Math.sin(p.sway) * 0.4 + p.speedX;
+            p.opacity -= p.fadeSpeed;
+
+            if (p.y < -10 || p.opacity <= 0) {
+                emberParticles[i] = createEmber(w, h, false);
+                continue;
+            }
+
+            embersCtx.beginPath();
+            embersCtx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            embersCtx.fillStyle = 'rgba(230, 40, 59, ' + Math.max(0, p.opacity) + ')';
+            embersCtx.shadowBlur = 8;
+            embersCtx.shadowColor = 'rgba(255, 60, 80, 0.8)';
+            embersCtx.fill();
+        }
+
+        embersAnimationId = requestAnimationFrame(updateAndDrawEmbers);
+    };
+
+    var startEmbers = function () {
+        if (!embersCanvas || embersAnimationId) return;
+        resizeEmbers();
+        emberParticles = [];
+        var count = window.innerWidth < 768 ? 16 : 30;
+        for (var i = 0; i < count; i++) {
+            emberParticles.push(createEmber(embersCanvas.width, embersCanvas.height, true));
+        }
+        window.addEventListener('resize', resizeEmbers);
+        embersAnimationId = requestAnimationFrame(updateAndDrawEmbers);
+    };
+
+    var stopEmbers = function () {
+        if (embersAnimationId) {
+            cancelAnimationFrame(embersAnimationId);
+            embersAnimationId = null;
+        }
+        if (embersCtx && embersCanvas) {
+            embersCtx.clearRect(0, 0, embersCanvas.width, embersCanvas.height);
+        }
+        window.removeEventListener('resize', resizeEmbers);
+    };
+
+    // Berserk Theme Toggle Handler
+    var $berserkToggle = $('#berserk-toggle');
+    var $dockBerserkText = $('.dock-berserk-text');
+    // Default to active unless explicitly set to 'inactive'
+    var savedBerserkPref = localStorage.getItem('berserk-theme');
+    var isBerserkActive = savedBerserkPref !== 'inactive';
+
+    var applyBerserkTheme = function (enable, withSound) {
+        if (enable) {
+            $('body').addClass('berserk-mode');
+            $berserkToggle.addClass('active').attr('aria-pressed', 'true');
+            $dockBerserkText.text('Berserk');
+            localStorage.setItem('berserk-theme', 'active');
+            startEmbers();
+            if (withSound) {
+                playDragonslayerClang();
+            }
+        } else {
+            $('body').removeClass('berserk-mode');
+            $berserkToggle.removeClass('active').attr('aria-pressed', 'false');
+            $dockBerserkText.text('Berserk');
+            localStorage.setItem('berserk-theme', 'inactive');
+            stopEmbers();
+        }
+    };
+
+    // Initialize default theme (active by default)
+    if (isBerserkActive) {
+        applyBerserkTheme(true, false);
+    } else {
+        applyBerserkTheme(false, false);
+    }
+
+    $berserkToggle.on('click', function (e) {
+        e.preventDefault();
+        var isCurrentlyActive = $('body').hasClass('berserk-mode');
+        applyBerserkTheme(!isCurrentlyActive, true);
     });
 
 })(jQuery);
